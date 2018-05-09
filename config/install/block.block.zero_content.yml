@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zero
+_core:
+  default_config_hash: B-Ett4-STthLwSqQyIyXsiH75-Xgv4HM_bP5owT6h1s
+id: zero_content
+theme: zero
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

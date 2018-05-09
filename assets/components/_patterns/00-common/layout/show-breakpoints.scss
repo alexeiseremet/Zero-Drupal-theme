@@ -1,0 +1,20 @@
+// Add demo label for responsive info.
+.show-breakpoints {
+  &::after {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem 2rem;
+    color: $base-font-color;
+    background-color: $secondary-background;
+    border-radius: 10rem;
+    opacity: .5;
+    z-index: 9999;
+
+    @each $name, $px in $breakpoints {
+      @include mappy-bp(min-width #{$px}) {
+        content: '#{$name} #{$px}';
+      }
+    }
+  }
+}

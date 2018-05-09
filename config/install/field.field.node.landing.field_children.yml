@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_children
+    - node.type.landing
+    - paragraphs.paragraphs_type.section
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: xRW2FYANSn4MI2e2WCDTZE-5LCuQZ_tuphCIEBDBafI
+id: node.landing.field_children
+field_name: field_children
+entity_type: node
+bundle: landing
+label: 'Landing children'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      section: section
+    target_bundles_drag_drop:
+      accordion:
+        weight: 2
+        enabled: false
+      text_block:
+        weight: 3
+        enabled: false
+      layout_wrapper:
+        weight: 4
+        enabled: false
+      section:
+        enabled: true
+        weight: 5
+      carousel:
+        weight: 9
+        enabled: false
+      hero_banner:
+        weight: 10
+        enabled: false
+      image:
+        weight: 11
+        enabled: false
+      quote:
+        weight: 15
+        enabled: false
+      tabs:
+        weight: 17
+        enabled: false
+field_type: entity_reference_revisions

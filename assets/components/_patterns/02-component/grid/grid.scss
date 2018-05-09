@@ -1,0 +1,76 @@
+// Grid
+//
+// For grid with equal columns:
+// 1 => [1]xs.
+// 203 => [2]xs [03]sm.
+// 1020304 => [1]xs [02]sm [03]md [04]lg.
+//
+// Markup: grid.twig
+//
+// Style guide: Patterns.Grid
+
+
+// Griddle functions.
+@mixin griddle($suffix: xsmall) {
+  @for $i from 1 through $grid-columns {
+    .grid--col-#{$i}#{\@+$suffix} {
+      > .grid__col {
+        @include flex-width(percentage(1 / $i));
+      }
+    }
+
+    .grid > .grid__col-#{$i}#{\@+$suffix} {
+      @include flex-width(percentage($i / $grid-columns));
+    }
+  }
+}
+
+.grid {
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+
+  /* Prevents distributing space between rows */
+  align-content: flex-start;
+
+  &--reverse {
+    flex-flow: row-reverse wrap;
+  }
+
+  &--gutter {
+    @include griddle-gutter();
+  }
+
+  &--gutter-lg {
+    @include griddle-gutter($grid-gutter-lg);
+  }
+}
+
+[class^="grid__col"] {
+  @include flex-width(100%);
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  min-height: .01rem;
+  /* Fixes flex-shrink value in IE10 */
+  -ms-flex-negative: 1;
+  position: relative;
+}
+
+@include griddle();
+
+@include mappy-bp(small) {
+  @include griddle($suffix: 'small');
+}
+
+@include mappy-bp(medium) {
+  @include griddle($suffix: 'medium');
+}
+
+@include mappy-bp(large) {
+  @include griddle($suffix: 'large');
+}
+
+@include mappy-bp(xlarge) {
+  @include griddle($suffix: 'xlarge');
+}

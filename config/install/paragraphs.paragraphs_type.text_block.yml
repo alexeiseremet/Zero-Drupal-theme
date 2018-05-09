@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: XC2lDb-EMOidtKyvFcyApjAHnFXZc7GflK_Nsc5uxSU
+id: text_block
+label: 'Text block'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

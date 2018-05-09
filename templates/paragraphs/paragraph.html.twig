@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ */
+#}
+
+{%
+  set classes = classes ?? [
+    paragraph.bundle()|clean_class,
+    paragraph.bundle()|clean_class ~ '--' ~ paragraph.getParentEntity().bundle()|clean_class
+  ]
+%}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,74 @@
+// Lists
+//
+// Markup: lists.twig
+//
+// Style guide: Common.Lists
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &%default-ul,
+  &%default-ol {
+    margin-bottom: $base-spacing;
+
+    > li {
+      position: relative;
+      padding-left: $base-size;
+      margin-bottom: .5rem;
+
+      &::before {
+        float: left;
+        margin-left: -$base-size;
+      }
+    }
+
+  }
+
+  &%default-ul {
+    > li {
+      &::before {
+        content: "\2014";
+      }
+    }
+  }
+
+  &%default-ol {
+    counter-reset: step-counter;
+
+    > li {
+      counter-increment: step-counter;
+
+      &::before {
+        content: counter(step-counter) ".";
+      }
+    }
+  }
+}
+
+.unordered-list {
+  @extend %default-ul;
+}
+
+.ordered-list {
+  @extend %default-ol;
+}
+
+// Definition list
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: bold;
+
+  & ~ dt {
+    margin-top: $small-spacing;
+  }
+}
+
+dd {
+  margin: 0;
+}

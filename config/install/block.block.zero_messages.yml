@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zero
+_core:
+  default_config_hash: x68l40KvRSgjSWSkbc2m2XOxFXzJlN0ctxUeYO6gZu0
+id: zero_messages
+theme: zero
+region: content
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,21 @@
+// Accordion
+//
+// Markup: collapse-accordion.twig
+//
+// Style guide: Component.Accordion
+
+.accordion {
+  position: relative;
+}
+
+.accordion__title {
+  &.is-active {
+  }
+}
+
+.accordion__content {
+  display: none;
+
+  &.is-open {
+  }
+}

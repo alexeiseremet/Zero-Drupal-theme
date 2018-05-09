@@ -1,0 +1,44 @@
+// Card
+//
+// Markup: card.twig
+//
+// Style guide: Component.Card
+
+.card {
+  @extend %flex-column;
+}
+
+.card__image {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.card__content {
+  @extend %flex-column;
+  padding: $small-spacing;
+  background-color: $secondary-background;
+}
+
+.card__header {
+  margin-bottom: $small-spacing;
+  flex-grow: 1;
+}
+
+.card__title {
+  @include heading-regular;
+  font-size: $base-font-size;
+}
+
+.card__meta {
+
+}
+
+.card__text {
+  flex-grow: 1;
+}
+
+.card__social-links {
+  @extend %inline-list;
+  margin-top: $small-spacing;
+  justify-content: space-between;
+}

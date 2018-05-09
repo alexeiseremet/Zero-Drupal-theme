@@ -1,0 +1,192 @@
+// Functions.
+@function em($px) {
+  @return $px / 16px * 1em;
+}
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// Clearfix.
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Font-face.
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+    eot: '?',
+    svg: '#' + str-replace($name, ' ', '_')
+  );
+
+  $formats: (
+    otf: 'opentype',
+    ttf: 'truetype'
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url('../' + quote($path + '.' + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+// Single image background with retina support.
+// USAGE: @include background-image-retina('preloader', 'GIF', 2rem, 2rem);
+@mixin background-image-retina($image-1x, $image-2x, $width, $height) {
+  background-image: url($assets-path + $image-1x);
+
+  @media (min--moz-device-pixel-ratio: 1.5),
+  (-o-min-device-pixel-ratio: 3/2),
+  (-webkit-min-device-pixel-ratio: 1.5),
+  (min-device-pixel-ratio: 1.5),
+  (min-resolution: 1.5dppx) {
+    background-image: url($assets-path + $image-2x);
+    background-size: $width $height;
+  }
+}
+
+@mixin img-fit() {
+  object-fit: cover;
+  object-position: 50% 50%;
+  font-family: 'object-fit: cover; object-position: 50% 50%';
+}
+
+@mixin absolute-cover {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+// Centered block.
+@mixin absolute-center($axis: false) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @if $axis == height {
+    height: 100%;
+    width: auto;
+  } @else if $axis == width {
+    height: auto;
+    min-height: 100%;
+  } @else {
+    height: auto;
+  }
+}
+
+// Full width containers in limited width parents.
+// Scroll bar width is 15px.
+@mixin full-width {
+  position: relative;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  .no-touch & {
+    margin-left: calc(50% - (50vw - .7rem));
+    margin-right: calc(50% - (50vw - .8rem));
+  }
+
+}
+
+// Use this for creating scalable elements (usually images / background images) that maintain a ratio.
+// USAGE: @include responsive-ratio(16,9);
+@mixin responsive-ratio($x,$y) {
+  height: 0;
+  padding-bottom: percentage($y / $x);
+}
+
+// Set flex item width.
+@mixin flex-width($width: 100%) {
+  flex-basis: $width;
+  max-width: $width;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex: 1 0 auto;
+  flex-flow: row nowrap;
+  /* Vertical align items */
+  align-items: stretch;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex: 1 0 auto;
+  flex-flow: column nowrap;
+  /* Vertical align items */
+  justify-content: flex-start;
+}
+
+@mixin griddle-gutter($size: $grid-gutter-sm) {
+  margin-top: -$small-spacing;
+  margin-left: -#{$size};
+
+  > [class^="grid__col"] {
+    padding-left: $size;
+    margin: $small-spacing 0;
+  }
+}
+
+@mixin dropdown() {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  padding: $base-spacing;
+  min-width: 22rem;
+  z-index: 97;
+  transition: opacity .3s, transform .3s;
+  transform: translateY(-1rem);
+  background-color: $base-background;
+  box-shadow: 0 0 1.8rem rgba($primary-background, 0.2), 0 0 1.8rem rgba($base-background, 0.3);
+
+  @include mappy-bp(medium) {
+    min-width: 26rem;
+  }
+
+  &.is-open {
+    visibility: visible;
+    transform: translateY(0%);
+    opacity: 1;
+    max-height: calc(100vh - 8rem);
+    overflow: auto;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}

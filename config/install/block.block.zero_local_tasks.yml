@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - zero
+_core:
+  default_config_hash: ir-eLHS07B4Ya5SAem83dgYF9gdboAE6VIFSPyDVVyk
+id: zero_local_tasks
+theme: zero
+region: content
+weight: -1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

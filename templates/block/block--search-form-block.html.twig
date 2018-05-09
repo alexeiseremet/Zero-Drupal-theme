@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Theme override for the search form block.
+ */
+#}
+
+{% import '@macro/svg.macro.twig' as svg_macro %}
+
+<div{{ attributes.addClass('site-search js-dropdown') }}>
+  <a class="site-search__icon site-icon js-dropdown-button"
+     href="javascript:;" role="button" aria-haspopup="true">
+    <span class="site-icon__on icon icon--dropdown-on">{{ svg_macro.svg('icon__search') }}</span>
+    <span class="site-icon__off icon icon--dropdown-off">{{ svg_macro.svg('icon__delete') }}</span>
+  </a>
+
+  <div class="site-search__dropdown js-site-search" aria-hidden="true">
+    {{ content }}
+  </div>
+</div>

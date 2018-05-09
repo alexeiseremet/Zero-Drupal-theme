@@ -1,0 +1,55 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: 4qQKStJ_4xdOVsrNhUb7cuQ3ABK6BMEmMo9nmrTEWBM
+id: paragraph.field_columns_medium
+field_name: field_columns_medium
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 12@medium
+      label: '100'
+    -
+      value: 6@medium
+      label: '50 50'
+    -
+      value: 3@medium--9@medium
+      label: '25 75'
+    -
+      value: 9@medium--3@medium
+      label: '75 25'
+    -
+      value: 4@medium--8@medium
+      label: '33 67'
+    -
+      value: 8@medium--4@medium
+      label: '67 33'
+    -
+      value: 4@medium
+      label: '33 34 33'
+    -
+      value: 3@medium--6@medium--3@medium
+      label: '25 50 25'
+    -
+      value: 3@medium--3@medium--6@medium
+      label: '25 25 50'
+    -
+      value: 6@medium--3@medium--3@medium
+      label: '50 25 25'
+    -
+      value: 3@medium
+      label: '25 25 25 25'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

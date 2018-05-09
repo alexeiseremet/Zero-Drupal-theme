@@ -1,0 +1,31 @@
+name: Zero
+type: theme
+description: Drupal kickstart theme.
+base theme: stable
+core: 8.x
+
+libraries:
+  - zero/global-styling
+  - zero/global-scripts
+  - zero/fonts
+
+component-libraries:
+  component:
+    paths:
+      - assets/components/_patterns/02-component
+  macro:
+    paths:
+      - assets/components/_macros/
+  svg:
+    paths:
+      - assets/public/svg
+
+regions:
+  brand: Brand
+  header: Header
+  content: Content
+  footer: Footer
+
+regions_hidden:
+  - sidebar_first
+  - sidebar_second

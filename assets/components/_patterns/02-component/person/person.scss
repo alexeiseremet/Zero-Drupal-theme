@@ -1,0 +1,58 @@
+// Person
+//
+// Markup: person.twig
+//
+// Style guide: Component.Person
+
+.person {
+  @extend %flex-column;
+  position: relative;
+  background: $white;
+  text-align: center;
+}
+
+.person__image {
+  flex: 0 0 auto;
+  margin: 0 auto;
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 100rem;
+  overflow: hidden;
+}
+
+.person__content {
+  @extend %flex-column;
+}
+
+.person__header {
+  margin-top: $base-spacing;
+}
+
+.person__name {
+  @include heading-regular;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.person__position {
+  @include heading-regular;
+}
+
+.person__body {
+  display: none;
+  flex-grow: 1;
+}
+
+.person__read-more {
+  margin-top: $base-spacing;
+}
+
+.person--large {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: $large-spacing;
+
+  .person__body {
+    display: block;
+  }
+}

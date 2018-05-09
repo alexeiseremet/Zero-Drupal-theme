@@ -1,0 +1,25 @@
+// Tabs
+//
+// Markup: tabs.twig
+//
+// Style guide: Component.Tabs
+
+.tabs {
+  position: relative;
+}
+
+.tabs__nav {
+  @extend %inline-list;
+  position: relative;
+}
+
+.tabs__nav-link {
+  font-size: $base-font-size;
+
+  &.is-active {
+  }
+}
+
+.tabs__content-item {
+  display: none;
+}

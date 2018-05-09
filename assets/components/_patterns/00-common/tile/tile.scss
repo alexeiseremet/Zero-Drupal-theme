@@ -1,0 +1,33 @@
+// Tile
+//
+// Markup: tile.twig
+//
+// Style guide: Patterns.Tile
+
+.tile {
+  position: relative;
+  background-color: $medium-gray;
+  overflow: hidden;
+
+  &,
+  &--1-1 {
+    @include responsive-ratio(1, 1);
+  }
+
+  &--1-2 {
+    @include responsive-ratio(1, 2);
+  }
+}
+
+.tile__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: $small-spacing;
+  color: $white;
+}
+
+.tile__image {
+  // code goes here
+}

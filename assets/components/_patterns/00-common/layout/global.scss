@@ -1,0 +1,104 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  // All the REM measurements are based on 10px sizing. So basically 1.5rem = 15px :)
+  font-size: 62.5%;
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  @include base-regular;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $base-font-color;
+  background-color: $base-background;
+  margin: 0;
+}
+
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+.clearfix {
+  @extend %clearfix;
+}
+
+.container {
+  @extend %container;
+}
+
+// ============================
+// Global layout with sticky footer.
+.global {
+  height: 100vh;
+  overflow-y: scroll;
+
+  &.no-yscroll {
+    overflow-y: hidden;
+  }
+}
+
+.global__page-wrapper {
+  @extend %flex-column;
+  height: 100%;
+}
+
+.global__header-wrapper,
+.global__content-wrapper {
+  flex: none;
+}
+
+.global__header-wrapper {
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1041;
+  }
+}
+
+.global__header {
+  background-color: $header-background;
+  width: 100%;
+}
+
+.global__header-inner {
+  @extend %container;
+  @extend %flex-row;
+}
+
+.global__content-wrapper {
+  overflow-x: hidden;
+  flex-grow: 1;
+}
+
+.global__content {
+  width: 100%;
+}
+
+.global__content-inner {
+  position: relative;
+}
+
+
+.global__footer-wrapper {
+  @extend %flex-row;
+  align-items: flex-end;
+  flex-grow: 0;
+}
+
+.global__footer {
+  background-color: $footer-background;
+  width: 100%;
+}
+
+.global__footer-inner {
+  @extend %container;
+}

@@ -1,0 +1,55 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: jtSjqgfBDGBAvGO0Cr7UL-h1yFzh5N4_trfmfIZNfVY
+id: paragraph.field_columns_xsmall
+field_name: field_columns_xsmall
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 12@xsmall
+      label: '100'
+    -
+      value: 6@xsmall
+      label: '50 50'
+    -
+      value: 3@xsmall--9@xsmall
+      label: '25 75'
+    -
+      value: 9@xsmall--3@xsmall
+      label: '75 25'
+    -
+      value: 4@xsmall--8@xsmall
+      label: '33 67'
+    -
+      value: 8@xsmall--4@xsmall
+      label: '67 33'
+    -
+      value: 4@xsmall
+      label: '33 34 33'
+    -
+      value: 3@xsmall--6@xsmall--3@xsmall
+      label: '25 50 25'
+    -
+      value: 3@xsmall--3@xsmall--6@xsmall
+      label: '25 25 50'
+    -
+      value: 6@xsmall--3@xsmall--3@xsmall
+      label: '50 25 25'
+    -
+      value: 3@xsmall
+      label: '25 25 25 25'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

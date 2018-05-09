@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ */
+#}
+
+{{ attach_library('zero/animate') }}
+
+{% if page.header %}
+  <header class="global__header-wrapper js-header" id="header" role="banner">
+    <div class="global__header">
+      <div class="global__header-inner">
+          {{ page.brand }}
+          {{ page.header }}
+      </div>
+    </div>
+  </header>
+{% endif %}
+
+<main class="global__content-wrapper js-main" id="main" role="main">
+  <div class="global__content">
+    <div class="global__content-inner">
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+      {% block content %}
+        <div class="layout layout--one-col">
+          <section class="layout__center" id="content">
+            {% if page.breadcrumb %}
+              {{ page.breadcrumb }}
+            {% endif %}
+
+            {{ page.content }}
+          </section>
+
+          {% if page.sidebar_first %}
+            <aside class="layout__left" id="sidebar-first" role="complementary">
+              {{ page.sidebar_first }}
+            </aside>
+          {% endif %}
+
+          {% if page.sidebar_second %}
+            <aside class="layout__right" id="sidebar-second" role="complementary">
+              {{ page.sidebar_second }}
+            </aside>
+          {% endif %}
+        </div>
+      {% endblock %}
+    </div>
+  </div>
+</main>
+
+{% if page.footer %}
+  <footer class="global__footer-wrapper js-footer">
+    <div class="global__footer" id="footer" role="contentinfo">
+      <div class="global__footer-inner">
+        {{ page.footer }}
+      </div>
+    </div>
+  </footer>
+{% endif %}

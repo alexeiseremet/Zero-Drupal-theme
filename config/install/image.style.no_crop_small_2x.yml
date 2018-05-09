@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: no_crop_small_2x
+label: 'No Crop small@2x'
+effects:
+  d93ff339-1ef5-4caa-9b3b-432ab131b929:
+    uuid: d93ff339-1ef5-4caa-9b3b-432ab131b929
+    id: image_scale
+    weight: 1
+    data:
+      width: 1534
+      height: 1534
+      upscale: false

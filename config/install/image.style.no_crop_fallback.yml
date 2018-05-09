@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: no_crop_fallback
+label: 'No Crop fallback'
+effects:
+  723c544b-3443-4c1f-8dfa-33a8e24d3e2c:
+    uuid: 723c544b-3443-4c1f-8dfa-33a8e24d3e2c
+    id: image_scale
+    weight: 1
+    data:
+      width: 42
+      height: 42
+      upscale: false

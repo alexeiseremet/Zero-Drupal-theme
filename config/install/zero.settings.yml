@@ -1,0 +1,15 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 0
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+cookiebar:
+  message:
+    value: "<p>We are using cookies to give you the best experience on our site. By continuing to use our site, you are agreeing to our use of cookies.</p>\r\n"
+    format: basic_html
+_core:
+  default_config_hash: v01CWn9gFCLIAH5RwE3-z34vkHmrLIW-6qaeeCXprCQ

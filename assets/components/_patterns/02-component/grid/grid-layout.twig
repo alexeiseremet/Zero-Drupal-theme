@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Grid layout component.
+ */
+#}
+
+<div class="grid grid--gutter-lg {{ modifier_class }}"{{ attributes }}>
+  {% for column in content %}
+    {% set col_classes = 'grid__col-' ~ column['#columns']|join(' grid__col-') %}
+
+    <div class="{{ col_classes }}">
+      {{ column }}
+    </div>
+  {% endfor %}
+</div>

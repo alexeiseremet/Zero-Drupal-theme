@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: DyOgqnKcKzlziFNiiZAMXtixUED1h7QzPNtJ4teFkQw
+id: layout_wrapper
+label: 'Wrapper Layout'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0, menu_name) }}
+
+{% macro menu_links(items, attributes, menu_level, menu_name) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      {%
+        set classes = [
+          'menu',
+          'menu--level-1',
+          'menu--' ~ menu_name,
+          'js-menu-' ~ menu_name
+        ]
+      %}
+      <ul{{ attributes.addClass(classes) }}>
+    {% else %}
+      <ul class="menu js-menu menu--level-{{ menu_level + 1 }}">
+    {% endif %}
+    {% for item in items %}
+      {%
+        set classes = [
+          item.is_expanded ? 'is-expanded js-dropdown js-dropdown-on-hover',
+          item.is_collapsed ? 'is-collapsed',
+          item.in_active_trail ? 'in-active-trail',
+        ]
+      %}
+      <li{{ item.attributes.addClass(classes) }}>
+        {% if item.below %}
+          {{ link(item.title ~ ' »', item.url, {'class': 'js-dropdown-button', 'aria-haspopup': 'true'}) }}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% else %}
+          {{ link(item.title, item.url) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

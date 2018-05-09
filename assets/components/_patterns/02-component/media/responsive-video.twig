@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Lists example.
+ */
+#}
+
+{% set x = x|default(21) %}
+{% set y = y|default(9) %}
+
+<div class='responsive-media responsive-media--{{ x }}-{{ y }}-all'>
+  <object class='responsive-media__placeholder js-img-placeholder'
+          data='//picsum.photos/42/{{ 42 * (y/x)|round }}?image=1041' type='image/jpeg'>alt</object>
+  <picture class='responsive-media__picture'>
+    <source srcset='//picsum.photos/767/{{ 767 * (y/x)|round }}?image=1041 1x' media='(min-width: 0em)' type='image/jpeg'>
+    <source srcset='//picsum.photos/1534/{{ 1534 * (y/x)|round }}?image=1041 1.5x' media='(min-width: 0em)' type='image/jpeg'>
+    <img src='//picsum.photos/42/{{ 42 * (y/x)|round }}?image=1041' alt=''></picture>
+</div>

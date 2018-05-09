@@ -1,0 +1,33 @@
+// Flex
+//
+// Markup: flex.twig
+//
+// Style guide: Patterns.Flex
+
+.flex {
+  @extend %flex-row;
+  height: 100%;
+  width: 100%;
+
+  &--column {
+    @extend %flex-column;
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  // Items.
+  > * {
+    flex: 0 99 auto;
+  }
+
+  &--fit > * {
+    flex: 1 1 0%;
+  }
+}
+
+// Do not wrapping into .flex--fit.
+.flex__item-grow {
+  flex: 99 0 auto;
+}

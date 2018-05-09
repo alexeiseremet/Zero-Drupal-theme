@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ */
+#}
+
+<main class="column" id="content" role="main">
+  <section class="section">
+    <a id="main-content"></a>
+
+    {% if site_name or site_slogan %}
+      <div{{ hide_site_name and hide_site_slogan ? ' class="visually-hidden"' }} id="name-and-slogan">
+        {% if site_name %}
+          <div{{ hide_site_name ? ' class="visually-hidden"' }} id="site-name">
+            <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
+              <strong>{{ site_name }}</strong>
+            </a>
+          </div>
+        {% endif %}
+        {% if site_slogan %}
+          <div{{ hide_site_slogan ? ' class="visually-hidden"' }} id="site-slogan">
+            {{ site_slogan }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if title %}
+      <h1 class="title" id="page-title">{{ title }}</h1>
+    {% endif %}
+
+    {{ page.content }}
+
+    {{ page.highlighted }}
+  </section>
+</main>

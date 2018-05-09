@@ -1,0 +1,147 @@
+// Typography
+//
+// Markup: typography.twig
+//
+// Style guide: Common.Typography
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  transition: color $base-animation;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: lighten($action-color, 10%);
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+blockquote {
+  margin: 0;
+  padding: $small-spacing $base-spacing;
+  background-color: $secondary-background;
+}
+
+img,
+picture {
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+svg,
+img[src*="svg"] {
+  height: 100%;
+  width: 100%;
+}
+
+%code,
+.code {
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  font-size: 90%;
+  background: $light-gray;
+  border-radius: .4rem;
+}
+
+// ============================
+.text {
+  font-size: 1.6rem;
+  margin: 0 auto;
+  width: 100%;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include heading-regular;
+    margin: $base-spacing 0;
+    line-height: 1.4;
+  }
+
+  h6 {
+    text-transform: uppercase;
+  }
+
+  // Heading tags
+  @for $i from 1 through 6 {
+    $size: 2.2 - ($i * 0.2);
+
+    h#{$i} {
+      font-size: $size#{rem};
+    }
+  }
+
+  @include mappy-bp(medium) {
+    @for $i from 1 through 6 {
+      $size: 3.6 - ($i * 0.4);
+
+      h#{$i} {
+        font-size: $size#{rem};
+      }
+    }
+  }
+
+  p,
+  blockquote {
+    margin-bottom: $base-spacing;
+  }
+
+  ul {
+    @extend %default-ul;
+  }
+
+  ol {
+    @extend %default-ol;
+  }
+
+  code {
+    @extend %code;
+  }
+}
+
+// Typography helper
+
+.font-xlarge {
+  font-size: ($base-font-size * 1.4);
+}
+
+.font-large {
+  font-size: ($base-font-size * 1.2);
+}
+
+.font-small {
+  font-size: ($base-font-size * .8);
+}
+
+.font-xsmall {
+  font-size: ($base-font-size * .6);
+}

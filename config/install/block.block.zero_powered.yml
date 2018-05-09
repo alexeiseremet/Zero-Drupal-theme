@@ -1,0 +1,21 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - zero
+_core:
+  default_config_hash: Y7_OndeIkDv7gn9RV-psNocZ2Odgk3PnLpSmkukXfVE
+id: zero_powered
+theme: zero
+region: footer
+weight: -4
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

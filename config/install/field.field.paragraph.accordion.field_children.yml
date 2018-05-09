@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_children
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: cW16QWrwsSqu4iDohyKrSEpRJqNIBywbbfBAgL8rUOQ
+id: paragraph.accordion.field_children
+field_name: field_children
+entity_type: paragraph
+bundle: accordion
+label: 'Accordion children'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      wysiwyg: wysiwyg
+    target_bundles_drag_drop:
+      accordion:
+        weight: 3
+        enabled: false
+      text_block:
+        weight: 4
+        enabled: false
+      layout_wrapper:
+        weight: 5
+        enabled: false
+      carousel:
+        weight: 9
+        enabled: false
+      hero_banner:
+        weight: 10
+        enabled: false
+      wysiwyg:
+        enabled: true
+        weight: 11
+      image:
+        weight: 11
+        enabled: false
+      section:
+        weight: 13
+        enabled: false
+      quote:
+        weight: 15
+        enabled: false
+      tabs:
+        weight: 17
+        enabled: false
+field_type: entity_reference_revisions

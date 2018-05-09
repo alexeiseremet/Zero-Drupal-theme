@@ -1,0 +1,86 @@
+// Text Block
+//
+// text-block--align-left - Align center.
+// text-block--align-right - Align right.
+//
+// Markup: text-block.twig
+//
+// Style guide: Component.Text Block
+
+.text-block {
+  @include flex-row;
+
+  &,
+  &--align-center {
+    text-align: center;
+  }
+
+  &--align-left {
+    text-align: left;
+  }
+
+  &--align-right {
+    text-align: right;
+  }
+}
+
+.text-block__inner {
+  @include flex-width();
+}
+
+.text-block__title {
+  @include heading-regular;
+  margin: 0 auto;
+  font-size: 3rem;
+  line-height: 1.4;
+}
+
+.text-block__text {
+  margin: 0 auto;
+  margin-top: $base-spacing;
+}
+
+.text-block__children {
+  margin: $base-spacing 0;
+}
+
+.text-block__text {
+  ul,
+  ol {
+    display: inline-block;
+    text-align: left;
+  }
+
+  ul {
+    @extend %default-ul;
+  }
+
+  ol {
+    @extend %default-ol;
+  }
+}
+
+.text-block__cta-button {
+  margin-top: $base-spacing;
+}
+
+// Children.
+.text-block--align-left {
+   .cta-button-group {
+     justify-content: flex-start;
+
+     @include mappy-bp(small) {
+       margin-left: -$large-spacing;
+     }
+   }
+ }
+
+.text-block--align-right {
+  .cta-button-group {
+    justify-content: flex-end;
+
+    @include mappy-bp(small) {
+      margin-right: -$large-spacing;
+    }
+  }
+}

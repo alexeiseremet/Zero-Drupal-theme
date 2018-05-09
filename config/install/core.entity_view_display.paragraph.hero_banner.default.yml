@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_banner.field_cta_button
+    - field.field.paragraph.hero_banner.field_heading
+    - field.field.paragraph.hero_banner.field_heading_tag
+    - field.field.paragraph.hero_banner.field_image_ref
+    - field.field.paragraph.hero_banner.field_text
+    - field.field.paragraph.hero_banner.field_text_align
+    - paragraphs.paragraphs_type.hero_banner
+  module:
+    - entity_reference_revisions
+    - link
+    - options
+    - text
+_core:
+  default_config_hash: m0FCbXPkDNTeUyoOd8FzgjHd_hKhI2QrO5bDGVhpkzg
+id: paragraph.hero_banner.default
+targetEntityType: paragraph
+bundle: hero_banner
+mode: default
+content:
+  field_cta_button:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_heading:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_heading_tag:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_image_ref:
+    type: entity_reference_revisions_entity_view
+    weight: 6
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_text:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_text_align:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+hidden: {  }

@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ */
+#}
+
+{%
+  set classes = classes ?? [
+    'card--' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'card--promoted',
+    node.isSticky() ? 'card--sticky',
+    not node.isPublished() ? 'card--unpublished',
+    view_mode ? 'card--' ~ view_mode|clean_class,
+  ]
+%}
+
+{% set attributes = attributes.addClass(classes) %}
+
+{% set title %}
+  {{ title_prefix }}
+  <h2{{ title_attributes }}>
+    <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+  </h2>
+  {{ title_suffix }}
+{% endset %}
+
+{% set teaser %}
+  {% if content_attributes|length %}
+    <div{{ content_attributes }}>
+      {{ content.body }}
+    </div>
+  {% else %}
+    {{ content.body }}
+  {% endif %}
+{% endset %}
+
+{%
+  include '@component/card/card.twig' with {
+    'attributes': attributes|without('class'),
+    'modifier_class': attributes.class,
+    'image': content.field_image,
+    'title': title,
+    'teaser': teaser,
+    "social_links": [
+      {
+        "title": "instagram",
+        "url": "http://google.com"
+      },
+      {
+        "title": "contacts",
+        "url": "http://google.com"
+      }
+    ]
+  } only
+%}

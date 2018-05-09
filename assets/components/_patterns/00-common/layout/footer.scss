@@ -1,0 +1,10 @@
+.region--footer {
+  .region__inner {
+    @include flex-row;
+    padding: $small-spacing 0;
+    flex-wrap: wrap;
+  }
+}
+
+// ============================
+.menu--footer {}

@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Dropdown example.
+ */
+#}
+
+{% import '@macro/svg.macro.twig' as svg_macro %}
+
+<!-- copy this -->
+<div class="dropdown js-dropdown">
+  <a class="dropdown__button js-dropdown-button"
+     href="javascript:;" role="button">
+    <span class="icon">{{ svg_macro.svg('icon__calendar') }}</span>
+    Dropdown
+  </a>
+
+  <div class="dropdown__content">
+    Dropdown content
+  </div>
+</div>

@@ -1,0 +1,19 @@
+{
+  "kss_styles": true,
+  "attributes": "",
+  "modifier_class": "",
+  "children": [
+    {
+      "#label": "One",
+      "content": "component-wysiwyg"
+    },
+    {
+      "#label": "Two",
+      "content": "component-wysiwyg"
+    },
+    {
+      "#label": "Three",
+      "content": "component-wysiwyg"
+    }
+  ]
+}

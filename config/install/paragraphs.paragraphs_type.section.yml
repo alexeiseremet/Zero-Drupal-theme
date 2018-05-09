@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: g_oOPkLE3EY7ihrVCwttPyKRWYDOF9XVgunkVUZERIo
+id: section
+label: 'Wrapper Section'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

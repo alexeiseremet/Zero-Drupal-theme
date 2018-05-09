@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+_core:
+  default_config_hash: YEU3CveostxAqXqhSADOctCPZhWnTQGdevTqYPuQytI
+name: 16_9_small
+label: '16:9 small'
+effects:
+  e3c5c63f-cbe2-461f-bf9e-048cfa5e5251:
+    uuid: e3c5c63f-cbe2-461f-bf9e-048cfa5e5251
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: 16_9_crop_ratio
+  8f50651d-2079-4d7d-b4e7-ea24c395d3e0:
+    uuid: 8f50651d-2079-4d7d-b4e7-ea24c395d3e0
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 767
+      height: 432

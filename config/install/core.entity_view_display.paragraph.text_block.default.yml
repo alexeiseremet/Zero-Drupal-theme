@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_block.field_children
+    - field.field.paragraph.text_block.field_cta_button
+    - field.field.paragraph.text_block.field_heading
+    - field.field.paragraph.text_block.field_heading_tag
+    - field.field.paragraph.text_block.field_text
+    - field.field.paragraph.text_block.field_text_align
+    - paragraphs.paragraphs_type.text_block
+  module:
+    - entity_reference_revisions
+    - link
+    - options
+    - text
+_core:
+  default_config_hash: ly8B5fU8ikUpLkQ_kve35f59ik8NatRHz2aRwvsnFwY
+id: paragraph.text_block.default
+targetEntityType: paragraph
+bundle: text_block
+mode: default
+content:
+  field_children:
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_cta_button:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_heading:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_heading_tag:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_text:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_text_align:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+hidden: {  }

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+_core:
+  default_config_hash: vaRERLzINKdtqlQk4EE9V9jVybHQ1hQfgvi1S6R0GNE
+id: node.field_children
+field_name: field_children
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

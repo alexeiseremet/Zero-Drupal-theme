@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - zero
+_core:
+  default_config_hash: gG4wDuy7r-im0o0f8kf7ABqFq9SSdUP9sTjXeminMh8
+id: zero_local_actions
+theme: zero
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

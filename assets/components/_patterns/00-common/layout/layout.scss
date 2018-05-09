@@ -1,0 +1,41 @@
+// Layout.
+.layout {
+  @extend %flex-row;
+}
+
+.layout__center {
+  order: 0;
+
+  // One column
+  .layout--one-col & {
+    @extend %container;
+  }
+
+  // Two columns
+  .layout--two-col & {
+    @include flex-width(80%);
+  }
+
+  // Three columns
+  .layout--tree-col & {
+    @include flex-width(60%);
+  }
+}
+
+.layout__left {
+  @include mappy-bp(small) {
+    @include flex-width(20%);
+    padding-right: 2%;
+    order: -1;
+    overflow: hidden;
+  }
+}
+
+.layout__right {
+  @include mappy-bp(small) {
+    @include flex-width(20%);
+    padding-left: 2%;
+    order: 1;
+    overflow: hidden;
+  }
+}

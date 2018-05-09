@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+_core:
+  default_config_hash: n5KcVUyO_7hTpg9jbymJfEaZhoCMF_EhN_uxkBLHHs8
+name: 16_9_fallback
+label: '16:9 fallback'
+effects:
+  1ddede86-3b1a-42f6-8c7e-594fcb65a2e4:
+    uuid: 1ddede86-3b1a-42f6-8c7e-594fcb65a2e4
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: 16_9_crop_ratio
+  6c5b141c-2846-4fcd-8e51-3a5d6a5ffef5:
+    uuid: 6c5b141c-2846-4fcd-8e51-3a5d6a5ffef5
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 42
+      height: 23

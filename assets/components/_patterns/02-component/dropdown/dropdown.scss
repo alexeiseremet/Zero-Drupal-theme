@@ -1,0 +1,27 @@
+// Dropdown
+//
+// Markup: dropdown.twig
+//
+// Style guide: Component.Dropdown
+
+.dropdown,
+.dropdown__button {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown__button {
+  &.is-hover {
+    opacity: .5;
+  }
+}
+
+.dropdown__content {
+  @include dropdown;
+}
+
+// Switch icon.
+:not(.is-hover) > .icon--dropdown-off,
+.is-hover > .icon--dropdown-on {
+  display: none;
+}

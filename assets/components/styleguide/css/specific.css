@@ -1,0 +1,36 @@
+/**
+ * This stylesheet is for styles you want to include only when the interface is being viewed within Pattern Lab.
+ * This is helpful for displaying demo styles for grids, animations, color swatches, etc
+ * It's also helpful for overriding context-specific styles like fixed or absolutely positioned elements
+ * These styles will not be your production CSS.
+ */
+
+.sg-subtype,
+.sg-pattern {
+  padding: 0 1.5rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.sg-subtype {
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  margin-top: 8rem;
+}
+
+.sg-pattern-title a {
+  font-size: 2.2rem;
+}
+
+#component-responsive-image .sg-pattern-example {
+  max-width: 25%;
+}
+
+.card {
+  max-width: 25%;
+}
+
+.messages {
+  position: relative;
+}

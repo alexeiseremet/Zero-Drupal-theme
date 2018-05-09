@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ */
+#}
+
+{%
+  include '@component/section/section.twig' with {
+    'attributes': attributes|without('class'),
+    'modifier_class': attributes.class,
+    'container_class': paragraph.field_section_style.value,
+    'content': content.children,
+  } only
+%}

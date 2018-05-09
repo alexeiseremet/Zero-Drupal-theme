@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Typography example.
+ */
+#}
+
+{% spaceless %}
+  <div class="grid grid--gutter-lg">
+    <div class="grid__col-12@xsmall grid__col-6@medium">
+      <div class="text">
+        <p>Type is all set with the <code>rems</code>, so font-sizes and spacial relationships can be responsively sized based
+          on a single <code>&lt;html&gt;</code> font-size property. Out of the box, Zero never changes the <code>&lt;html&gt;</code>
+          font-size, but it's there in case you need it for your project. All measurements are still base 10 though so, an
+          <code>&lt;h1&gt;</code> with <code>3.2rem</code> font-size just means <code>32px</code>.</p>
+        <p><strong>The typography base</strong> is <a href="https://fonts.google.com/specimen/Open+Sans">Open Sans</a>
+          served by Google, set at 1.4rem (14px) over a 1.7 line height (23.8px). Other type basics like
+          <a href="#">anchors</a>, <strong>strong</strong>, <em>emphasis</em>, and <u>underline</u> are all obviously
+          included.</p>
+        <p><strong>Headings</strong> create a family of distinct sizes each with specific <code>letter-spacing</code>,
+          <code>line-height</code>, and <code>margins</code>.</p>
+      </div>
+    </div>
+    <div class="grid__col-12@xsmall grid__col-6@medium">
+      <div class="page-title">Page title <span class="font-small"><code class="code">.page-title</code> 3.8rem</span></div>
+
+      <div class="text" style="width: 100%">
+        <h1>Heading one <span class="font-small"><code>&lt;h1&gt;</code> 3.2rem</span></h1>
+        <h2>Heading two <span class="font-small"><code>&lt;h2&gt;</code> 2.8rem</span></h2>
+        <h3>Heading three <span class="font-small"><code>&lt;h3&gt;</code> 2.4rem</span></h3>
+        <h4>Heading four <span class="font-small"><code>&lt;h4&gt;</code> 2.0rem</span></h4>
+        <h5>Heading five <span class="font-small"><code>&lt;h5&gt;</code> 1.6rem</span></h5>
+        <h6>Heading six <span class="font-small"><code>&lt;h6&gt;</code> 1.2rem</span></h6>
+      </div>
+    </div>
+  </div>
+{% endspaceless %}

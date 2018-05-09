@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_align
+    - paragraphs.paragraphs_type.text_block
+  module:
+    - options
+_core:
+  default_config_hash: _R2alOkC4l-_FZ2Mf0-YsMIfad3TfQ4WzuF0gVdiBn8
+id: paragraph.text_block.field_text_align
+field_name: field_text_align
+entity_type: paragraph
+bundle: text_block
+label: 'Text align'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: align-left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

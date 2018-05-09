@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Messages example.
+ *
+ * Available variables:
+ * - attributes: raw.
+ * - modifier_class: string.
+ * - message: raw.
+ */
+#}
+
+{% spaceless %}
+  <div class="messages js-messages {{ modifier_class }}"{{ attributes }}>
+    <div class="message__inner">
+      <ul class="messages__list">
+        <li class="messages__item">{{ message }}</li>
+      </ul>
+
+      <div class="messages__close">
+        <button class="button button--xsmall js-messages-close" type="button">
+          {{ 'Close'|t }}
+        </button>
+      </div>
+    </div>
+  </div>
+{% endspaceless %}

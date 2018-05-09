@@ -1,0 +1,108 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Zero theme.
+ */
+
+use Drupal\Core\Render\Element;
+use Drupal\Core\Messenger\MessengerInterface;
+
+//kint_require();
+//Kint::$maxLevels = 6;
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function zero_page_attachments_alter(&$page) {
+  // Force IE to use Chrome Frame if installed.
+  $chrome_frame = [
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => [
+      'http-equiv' => 'X-UA-Compatible',
+      'content' => 'IE=edge, Chrome=1',
+    ],
+  ];
+  $page['#attached']['html_head'][] = [$chrome_frame, 'chrome_frame'];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function zero_form_alter(&$form, &$form_state, $form_id = NULL) {
+  // Mark the submit action as the primary action, when it appears.
+  if(empty($form['actions']['submit']['#button_type'])) {
+    $form['actions']['submit']['#button_type'] = 'primary';
+  }
+
+  if(isset($form['basic'])) {
+    unset(
+      $form['basic']['#attributes']['class'],
+      $form['help_link']
+    );
+
+    // Mark the submit action as the primary action, when it appears.
+    if(empty($form['basic']['submit']['#button_type'])) {
+      $form['basic']['submit']['#button_type'] = 'primary';
+    }
+  }
+}
+
+/**
+ * Show cookie bar.
+ *
+ * Implements hook_preprocess_page().
+ */
+function zero_preprocess_page(&$variables) {
+  // Show cookie bar.
+  if (!isset($_COOKIE['cookiebar'])) {
+    $cookie_message = [
+      '#markup' => theme_get_setting('cookiebar.message.value'),
+    ];
+
+    $variables['#attached']['library'][] = 'zero/cookiebar';
+    MessengerInterface::addMessage($cookie_message, 'cookiebar');
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function zero_preprocess_field(&$variables, $hook) {
+  // Make additional variables available to the template.
+  $variables['bundle'] = $variables['element']['#bundle'];
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function zero_preprocess_paragraph(&$variables) {
+  if (!empty($variables['content']['field_children']) && Element::children($variables['content']['field_children'])) {
+    $variables['content']['children'] = array_intersect_key($variables['content']['field_children'], Element::children($variables['content']['field_children']));
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function zero_preprocess_paragraph__layout_wrapper(&$variables) {
+  $screens = ['xsmall', 'small', 'medium', 'large'];
+  $children = Element::children($variables['elements']['field_children']);
+
+  foreach ($screens as $screen) {
+    if (isset($variables['elements']['field_columns_'.$screen])) {
+      $classes = $variables['elements']['field_columns_' . $screen][0]["#markup"];
+      $classes_array = explode('--', $classes);
+      $size_screen = count($classes_array);
+
+      foreach ($children as $key) {
+        if (!isset($variables['content']['children'][$key]['#columns'])) {
+          $variables['content']['children'][$key]['#columns'] = [];
+        }
+
+        array_push($variables['content']['children'][$key]['#columns'], $classes_array[$key % $size_screen]);
+      }
+    }
+  }
+}

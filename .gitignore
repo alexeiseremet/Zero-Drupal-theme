@@ -1,0 +1,17 @@
+# NPM
+assets/.npm/config.js
+assets/.npm/node_modules
+
+# Statics
+assets/public/css/styles.css
+assets/public/css/styles.css.map
+assets/public/js/scripts.js
+assets/public/js/scripts.js.map
+assets/public/svg/*.svg
+
+# Style guide
+assets/export/*
+assets/vendor/*
+assets/config/*.json
+assets/public/patternlab/*
+assets/public/styleguide/*

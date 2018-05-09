@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Card component.
+ *
+ * Available variables:
+ * - attributes: raw.
+ * - modifier_class: string.
+ * - children: array of objects.
+ *   - #label: string.
+ *   - content: raw.
+ */
+#}
+
+{% spaceless %}
+  <div class="tabs js-tabs {{ modifier_class }}"{{ attributes }}>
+    {% set tabID = '#tab-' ~ random() %}
+
+    <ul class="tabs__nav js-tabs-nav">
+      {% for child in children %}
+        {% set itemID = tabID ~ loop.index %}
+
+        <li class="tabs__nav-item js-tabs-nav-item" role="tab" tabindex="{{ loop.first ? '0' : '-1' }}">
+          <a class="tabs__nav-link" data-collapse="tab"
+             href="{{ itemID }}" aria-expanded="{{ loop.first ? 'true' : 'false' }}">
+            {{ child['#label'] }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="tabs__content js-tabs-content">
+      {% for child in children %}
+        {% set itemID = tabID ~ loop.index %}
+
+        <div id="{{ itemID[1:] }}" class="tabs__content-item js-tabs-content-item" role="tabpanel">
+          {{ child['content'] }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endspaceless %}

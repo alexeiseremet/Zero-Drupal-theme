@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ *
+ * Columns 1020403 - [1] xs, [02] sm, [04] md, [03] lg.
+ */
+#}
+
+{%
+  set breackpoint = (options.columns|length is odd)
+                      ? ('0' ~ options.columns)|split('', 2)
+                      : options.columns|split('', 2)
+%}
+
+{%
+  set grid_cls = {
+    xsmall : breackpoint.0|first == '0' ? breackpoint.0[1:] : breackpoint.0,
+    small : breackpoint.1|first == '0'  ? breackpoint.1[1:] : breackpoint.1,
+    medium : breackpoint.2|first == '0' ? breackpoint.2[1:] : breackpoint.2,
+    large : breackpoint.3|first == '0'  ? breackpoint.3[1:] : breackpoint.3,
+  }
+%}
+
+{%
+  set classes = classes ?? [
+    'grid',
+    'grid--gutter',
+    grid_cls.xsmall ? 'grid--col-' ~ grid_cls.xsmall ~ '@xsmall',
+    grid_cls.small  ? 'grid--col-' ~ grid_cls.small ~ '@small',
+    grid_cls.medium ? 'grid--col-' ~ grid_cls.medium ~ '@medium',
+    grid_cls.large  ? 'grid--col-' ~ grid_cls.large ~ '@large',
+  ]
+%}
+
+{% if title %}
+  <div class="grid-header"><h3>{{ title }}</h3></div>
+{% endif %}
+
+<div{{ attributes.addClass(classes) }}>
+  {% block content %}
+    {% if options.alignment == 'horizontal' %}
+      {% for row in items %}
+        {% for column in row.content %}
+          <div{{ column.attributes.addClass(col_classes, 'grid__col') }}>
+            {{ column.content }}
+          </div>
+        {% endfor %}
+      {% endfor %}
+    {% else %}
+      {% for column in items %}
+        {% for row in column.content %}
+          <div{{ row.attributes.addClass(row_classes, 'grid__col') }}>
+            {{ row.content }}
+          </div>
+        {% endfor %}
+      {% endfor %}
+    {% endif %}
+  {% endblock %}
+</div>

@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ */
+#}
+
+{% set classes = [
+'region',
+'region--' ~ region|clean_class,
+] %}
+
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="region__inner">
+      {{ content }}
+    </div>
+  </div>
+{% endif %}

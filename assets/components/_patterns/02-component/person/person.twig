@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Card component.
+ *
+ * Available variables:
+ * - attributes: raw.
+ * - modifier_class: string.
+ * - image: raw.
+ * - name: raw.
+ * - position: raw.
+ * - body: raw.
+ * - read_more: raw.
+ */
+#}
+
+{% spaceless %}
+  <article class="person js-person {{ modifier_class }}"{{ attributes }}>
+    {% if image %}
+      <div class="person__image">
+        {{ image }}
+      </div>
+    {% endif %}
+
+    <div class="person__content">
+      <div class="person__header">
+        <h3 class="person__name">{{ name }}</h3>
+        <div class="person__position">{{ position }}</div>
+      </div>
+
+      {% if body %}
+        <div class="person__body">
+          {{ body }}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if read_more %}
+      <div class="person__read-more">
+        {{ read_more }}
+      </div>
+    {% endif %}
+  </article>
+{% endspaceless %}

@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_children
+    - paragraphs.paragraphs_type.tabs
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: K-fsACycmARbd41NYqgMniL9Nj7QacY_mOE10xAuzaE
+id: paragraph.tabs.field_children
+field_name: field_children
+entity_type: paragraph
+bundle: tabs
+label: 'Tabs children'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      wysiwyg: wysiwyg
+    target_bundles_drag_drop:
+      tabs:
+        weight: 9
+        enabled: false
+      accordion:
+        weight: 10
+        enabled: false
+      wysiwyg:
+        enabled: true
+        weight: 11
+      carousel:
+        weight: 11
+        enabled: false
+      hero_banner:
+        weight: 12
+        enabled: false
+      image:
+        weight: 13
+        enabled: false
+      layout_wrapper:
+        weight: 14
+        enabled: false
+      quote:
+        weight: 15
+        enabled: false
+      section:
+        weight: 15
+        enabled: false
+      text_block:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

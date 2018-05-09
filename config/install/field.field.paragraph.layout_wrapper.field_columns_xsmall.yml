@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_columns_xsmall
+    - paragraphs.paragraphs_type.layout_wrapper
+  module:
+    - options
+_core:
+  default_config_hash: C5JN9ySWbeR-7a_va746PmoCPvo2lvGJGY0T3NmY9-U
+id: paragraph.layout_wrapper.field_columns_xsmall
+field_name: field_columns_xsmall
+entity_type: paragraph
+bundle: layout_wrapper
+label: '@xsmall'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 12@xsmall
+default_value_callback: ''
+settings: {  }
+field_type: list_string

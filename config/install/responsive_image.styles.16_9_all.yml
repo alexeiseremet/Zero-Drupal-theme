@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.16_9_fallback
+    - image.style.16_9_small
+    - image.style.16_9_small_2x
+    - image.style.16_9_xsmall
+    - image.style.16_9_xsmall_2x
+  theme:
+    - zero
+_core:
+  default_config_hash: OGTbauQiTTrrTcrh6rUWMAVIEh8Y5UynVIyUcAij9Ic
+id: 16_9_all
+label: '16:9 All breackpoints'
+image_style_mappings:
+  -
+    breakpoint_id: zero.small
+    multiplier: 1.5x
+    image_mapping_type: image_style
+    image_mapping: 16_9_small_2x
+  -
+    breakpoint_id: zero.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 16_9_small
+  -
+    breakpoint_id: zero.xsmall
+    multiplier: 1.5x
+    image_mapping_type: image_style
+    image_mapping: 16_9_xsmall_2x
+  -
+    breakpoint_id: zero.xsmall
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 16_9_xsmall
+breakpoint_group: zero
+fallback_image_style: 16_9_fallback

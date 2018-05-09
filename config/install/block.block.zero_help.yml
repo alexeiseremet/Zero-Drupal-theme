@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - zero
+_core:
+  default_config_hash: H0QeZDxR3-AFlQIOmQoFZ_y-r2FQcbOSxYZNXj_W0zs
+id: zero_help
+theme: zero
+region: content
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: raQLj6kn_ghHWCvtTsUPtWbA_6ecP7D6rEiGaPQ9weo
+id: accordion
+label: 'Wrapper Accordion'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,75 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_children
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.carousel
+    - paragraphs.paragraphs_type.hero_banner
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.layout_wrapper
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.tabs
+    - paragraphs.paragraphs_type.text_block
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: h5td8GNY-eHJz36TNp1b-v3X2_1Qix9ixDDrFu6C_J8
+id: paragraph.section.field_children
+field_name: field_children
+entity_type: paragraph
+bundle: section
+label: 'Section children'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion: accordion
+      layout_wrapper: layout_wrapper
+      text_block: text_block
+      carousel: carousel
+      hero_banner: hero_banner
+      quote: quote
+      wysiwyg: wysiwyg
+      image: image
+      tabs: tabs
+    target_bundles_drag_drop:
+      section:
+        weight: 5
+        enabled: false
+      accordion:
+        enabled: true
+        weight: 6
+      layout_wrapper:
+        enabled: true
+        weight: 7
+      text_block:
+        enabled: true
+        weight: 8
+      carousel:
+        enabled: true
+        weight: 9
+      hero_banner:
+        enabled: true
+        weight: 10
+      quote:
+        enabled: true
+        weight: 10
+      wysiwyg:
+        enabled: true
+        weight: 11
+      image:
+        enabled: true
+        weight: 11
+      tabs:
+        enabled: true
+        weight: 17
+field_type: entity_reference_revisions

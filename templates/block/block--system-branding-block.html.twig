@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ */
+#}
+
+<div{{ attributes.addClass('site-branding') }}>
+  <div class="site-branding__inner js-site-branding">
+    {% if site_logo %}
+      <a class="site-branding__logo" href="{{ path('<front>') }}" title="{{ site_name|t }}" rel="home">
+        {#<img src="{{ site_logo }}" alt="{{ site_name|t }}">#}
+        {% include site_logo %}
+      </a>
+    {% endif %}
+    {% if site_name or site_slogan %}
+      <div class="site-branding__text visually-hidden">
+        {% if site_name %}
+          <div class="site-branding__name">
+            <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name|t }}</a>
+          </div>
+        {% endif %}
+        {% if site_slogan %}
+          <div class="site-branding__slogan">{{ site_slogan|t }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>

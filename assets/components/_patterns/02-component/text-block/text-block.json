@@ -1,0 +1,14 @@
+{
+  "attributes": "",
+  "modifier_class": "",
+  "heading_tag" : "",
+  "heading": "<div class='head-title'>Text block</div>",
+  "text": "<div class='text'><ul><li>Bits 'n bobs squiffy morris dancers real ale,</li><li>Geordie on the pull fried toast alright geezer therewith.</li></ul></div>",
+  "children": "component-wysiwyg",
+  "cta_button": "<a class='button button--primary' href='javascript:;'>Call to action text</a>",
+  "more_button": "",
+  "video_button": {
+    "title": "",
+    "url": ""
+  }
+}

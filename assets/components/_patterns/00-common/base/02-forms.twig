@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Forms example.
+ */
+#}
+
+<div class="grid grid--horizontal grid--gutter grid--col-2@small">
+  <div class="grid__col">
+    <form class="form">
+      <div class="form-item js-form-item form-type-email js-form-type-email form-item-mail js-form-item-mail">
+        <label for="edit-mail" class="form-required js-form-required">Your email address</label>
+        <input data-drupal-selector="edit-mail" type="email" id="edit-mail" name="mail" value="" size="60" maxlength="254"
+               class="form-email required" required="required" aria-required="true">
+      </div>
+
+      <div class="field--type-list-float field--name-field-select-contact field--widget-options-select form-wrapper js-form-wrapper"
+           data-drupal-selector="edit-field-select-contact-wrapper" id="edit-field-select-contact-wrapper">
+        <div class="form-item js-form-item form-type-select js-form-type-select form-item-field-select-contact js-form-item-field-select-contact">
+          <label for="edit-field-select-contact">Select contact</label>
+          <div class="form-select-wrapper">
+            <select data-drupal-selector="edit-field-select-contact" id="edit-field-select-contact"
+                    name="field_select_contact" class="form-select">
+              <option value="_none">- None -</option>
+              <option value="0" selected="">Facebook</option>
+              <option value="1">Google</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-item js-form-item form-type-textarea js-form-type-textarea form-item-message-0-value js-form-item-message-0-value">
+        <label for="edit-message-0-value" class="form-required js-form-required">Message</label>
+        <div class="form-textarea-wrapper">
+          <textarea class="js-text-full text-full form-textarea required resize-vertical" data-drupal-selector="edit-message-0-value" id="edit-message-0-value" name="message[0][value]" rows="3" cols="60" placeholder="" required="required" aria-required="true"></textarea>
+        </div>
+      </div>
+
+      <div class="field--type-boolean field--name-field-boolean field--widget-boolean-checkbox form-wrapper js-form-wrapper" data-drupal-selector="edit-field-boolean-wrapper" id="edit-field-boolean-wrapper">
+        <div class="form-item js-form-item form-type-checkbox js-form-type-checkbox form-item-field-boolean-value js-form-item-field-boolean-value">
+          <input data-drupal-selector="edit-field-boolean-value" type="checkbox" id="edit-field-boolean-value" name="field_boolean[value]" value="1" class="form-checkbox">
+          <label for="edit-field-boolean-value" class="option">Boolean</label>
+        </div>
+      </div>
+
+      <div data-drupal-selector="edit-actions" class="form-actions form-wrapper js-form-wrapper" id="edit-actions">
+        <input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Send message" class="button button--primary js-form-submit form-submit">
+        <input data-drupal-selector="edit-preview" type="submit" id="edit-preview" name="op" value="Preview" class="button js-form-submit form-submit">
+      </div>
+    </form>
+  </div>
+</div>

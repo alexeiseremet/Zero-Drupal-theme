@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ */
+#}
+
+{% set classes = [
+  'text-block--' ~ paragraph.field_text_align.value
+] %}
+
+{% set attributes = attributes.addClass(classes) %}
+
+{%
+  include '@component/text-block/text-block.twig' with {
+    'attributes': attributes|without('class'),
+    'modifier_class': attributes.class,
+    'heading_tag': paragraph.field_heading_tag.value,
+    'heading': content.field_heading,
+    'text': content.field_text,
+    'children': content.field_children,
+    'cta_button': content.field_cta_button,
+  } only
+%}

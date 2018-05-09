@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 5jUtGyklwt_krKE255HTOcG0Y-m49bsg6gLLixmz-xs
+id: carousel
+label: 'Wrapper Carousel'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

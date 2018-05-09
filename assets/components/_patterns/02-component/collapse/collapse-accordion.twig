@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Accordion component.
+ *
+ * Available variables:
+ * - attributes: raw.
+ * - modifier_class: string.
+ * - children: array of objects.
+ *   - #label: string.
+ *   - content: raw.
+ */
+#}
+
+{% spaceless %}
+  <div class="accordion js-accordion {{ modifier_class }}"{{ attributes }}>
+    {% set accordionID = '#accordion-' ~ random() %}
+
+    {% for child in children %}
+      {% set itemID = accordionID ~ loop.index %}
+
+      <div class="accordion__item js-accordion-item">
+        <dt class="accordion__title" role="tab" tabindex="{{ loop.first ? '0' : '-1' }}">
+          <a class="accordion__title-link" data-collapse="accordion"
+             href="{{ itemID }}" aria-expanded="{{ loop.first ? 'true' : 'false' }}">
+            {{ child['#label'] }}
+          </a>
+        </dt>
+
+        <dd id="{{ itemID[1:] }}" class="accordion__content js-accordion-content" role="tabpanel">
+          {{ child['content'] }}
+        </dd>
+      </div>
+    {% endfor %}
+  </div>
+{% endspaceless %}

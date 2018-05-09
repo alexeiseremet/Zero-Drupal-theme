@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ */
+#}
+
+{# Remove 'field_' if field name start with that string. #}
+{% set classes = classes ?: field_name|replace({'field_' : ''})|clean_class %}
+
+{%
+  set title_classes = title_classes ?? [
+    field_name|replace({'field_' : ''})|clean_class ~ '__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+{% if label_hidden %}
+  {% if multiple %}
+    <div{{ attributes.addClass(classes ~ '-group') }}>
+      {% for item in items %}
+        <div{{ item.attributes.addClass(classes) }}>{{ item.content }}</div>
+      {% endfor %}
+    </div>
+  {% else %}
+    {% for item in items %}
+      <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div{{ attributes.addClass(classes ~ '-wrapper') }}>
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+    {% if multiple %}
+      <div class="{{ classes ~ '-group' }}">
+    {% endif %}
+    {% for item in items %}
+      <div{{ item.attributes.addClass(classes) }}>{{ item.content }}</div>
+    {% endfor %}
+    {% if multiple %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

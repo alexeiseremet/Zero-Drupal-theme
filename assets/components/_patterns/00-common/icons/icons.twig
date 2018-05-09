@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Icons example.
+ */
+#}
+
+{% set
+  icons = [
+    'icon__calendar',
+    'icon__checkmark',
+    'icon__contacts',
+    'icon__delete',
+    'icon__down',
+    'icon__instagram',
+    'icon__menu',
+    'icon__music',
+    'icon__next',
+    'icon__next-white',
+    'icon__prev',
+    'icon__prev-white',
+    'icon__search',
+    'icon__share'
+  ]
+%}
+
+<ul class="inline-list">
+  {% for icon in icons %}
+    <li class="0">
+        <!-- copy this -->
+      {% import '@macro/svg.macro.twig' as svg_macro %}
+      <span class="icon">
+        {{ svg_macro.svg(icon) }}
+      </span>
+
+      {{ icon }}
+    </li>
+  {% endfor %}
+</ul>

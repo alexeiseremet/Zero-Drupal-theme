@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ */
+#}
+
+{%
+  include '@component/grid/grid-layout.twig' with {
+    'attributes': attributes|without('class'),
+    'modifier_class': attributes.class,
+    'content': content.children,
+  } only
+%}

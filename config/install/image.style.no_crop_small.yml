@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: no_crop_small
+label: 'No Crop small'
+effects:
+  2f6d1ad8-7208-4ad1-a878-d72c4167474c:
+    uuid: 2f6d1ad8-7208-4ad1-a878-d72c4167474c
+    id: image_scale
+    weight: 1
+    data:
+      width: 767
+      height: 767
+      upscale: false

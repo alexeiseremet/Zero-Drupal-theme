@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.landing.field_children
+    - field.field.node.landing.field_image
+    - node.type.landing
+  module:
+    - entity_reference_revisions
+    - image
+    - user
+_core:
+  default_config_hash: i9JoLMwmVrA8kwzG7OTsYFaRW6Jb3KgZ-_f-M7EApYs
+id: node.landing.default
+targetEntityType: node
+bundle: landing
+mode: default
+content:
+  field_children:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_image:
+    type: image
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

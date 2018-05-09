@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.layout_wrapper.field_children
+    - field.field.paragraph.layout_wrapper.field_columns_medium
+    - field.field.paragraph.layout_wrapper.field_columns_xsmall
+    - paragraphs.paragraphs_type.layout_wrapper
+  module:
+    - paragraphs
+_core:
+  default_config_hash: QI70rq8HPiUU8JD0EY4qOLvcyihAh0DC3mpzeJHE6tY
+id: paragraph.layout_wrapper.default
+targetEntityType: paragraph
+bundle: layout_wrapper
+mode: default
+content:
+  field_children:
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: select
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_columns_medium:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_columns_xsmall:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

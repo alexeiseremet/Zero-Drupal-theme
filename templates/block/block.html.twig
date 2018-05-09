@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ */
+#}
+
+{%
+  set classes = [
+    'block',
+    'block--' ~ plugin_id|clean_class,
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2 class="block__head" {{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</div>

@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override for a menu block.
+ */
+#}
+
+{% import '@macro/svg.macro.twig' as svg_macro %}
+
+<div{{ attributes.addClass('account-navigation js-dropdown') }}>
+  <a class="account-navigation__icon site-icon js-dropdown-button"
+     href="javascript:;" role="button" aria-haspopup="true">
+    <span class="site-icon__on icon icon--dropdown-on">{{ svg_macro.svg('icon__contacts') }}</span>
+    <span class="site-icon__off icon icon--dropdown-off">{{ svg_macro.svg('icon__delete') }}</span>
+  </a>
+
+  <nav class="account-navigation__dropdown js-account-navigation" role="navigation" aria-hidden="true">
+    {{ content }}
+  </nav>
+</div>
+

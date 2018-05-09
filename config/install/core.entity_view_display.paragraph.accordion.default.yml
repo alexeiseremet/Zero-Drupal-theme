@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.accordion.field_children
+    - paragraphs.paragraphs_type.accordion
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: z-hu0tPvm_-R2bwf-JInYpSm56aXkkmUYINSffGfOLQ
+id: paragraph.accordion.default
+targetEntityType: paragraph
+bundle: accordion
+mode: default
+content:
+  field_children:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

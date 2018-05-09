@@ -1,0 +1,91 @@
+/*
+ * 1rem = 10px
+*/
+
+// Paths.
+$svg_src: '../../public/svg';
+$img_src: '../../public/images';
+
+// Breackpoints.
+// https://github.com/zellwk/mappy-breakpoints
+$breakpoints: (
+  'xsmall': 0px,
+  'small': 576px,
+  'medium': 768px,
+  'large': 992px,
+  'xlarge': 1200px
+);
+
+// Container.
+$container-width: 120rem !default;
+
+// Grid.
+$grid-columns: 12 !default;
+$grid-gutter-sm: 2rem !default;
+$grid-gutter-lg: 6rem !default;
+
+// Colors.
+$dark-gray: #414141;
+$medium-gray: #999;
+$light-gray: #ddd;
+$white: #fff;
+$blue: #0d28ff;
+
+$base-color: $dark-gray !default;
+$primary-color: $white !default;
+$secondary-color: $medium-gray !default;
+
+$base-background: $white !default;
+$primary-background: $blue !default;
+$secondary-background: $light-gray !default;
+
+$action-color: $blue !default;
+$action-active-color: $dark-gray !default;
+$action-disabled-color: $medium-gray !default;
+
+// Typography.
+$font-base: "Open Sans", sans-serif !default;
+$font-primary-regular: "Montserrat", sans-serif !default;
+
+$base-font-family: $font-base !default;
+$heading-font-family: $font-primary-regular !default;
+$base-font-size: 1.4rem !default;
+$base-font-color: $dark-gray !default;
+$base-line-height: 1.7 !default;
+
+// Sizes.
+$base-border-radius: 0 !default;
+$base-size: $base-line-height * $base-font-size !default;
+$base-spacing: $base-size !default;
+$large-spacing: $base-spacing * 2 !default;
+$small-spacing: $base-spacing / 2 !default;
+
+// Border.
+$base-border-color: $light-gray !default;
+$base-border: .1rem solid $base-border-color !default;
+
+// Forms.
+$form-input-padding: .6rem !default;
+$form-input-border-color: $base-border-color !default;
+$form-input-border: .2rem solid transparent !default;
+$form-box-shadow: none !default; //inset 0 .1rem .3rem rgba($dark-gray, .0);
+$form-box-shadow-focus: $form-box-shadow !default;
+
+// Animations.
+$base-animation: .5s ease !default;
+
+// Layout.
+$header-background: $white !default;
+$footer-background: $white !default;
+
+// Breadcrumb.
+$breadcrumb-color: $action-color !default;
+$breadcrumb-color-hover: lighten($breadcrumb-color, 10%) !default;
+$breadcrumb-color-active: $medium-gray !default;
+
+// Messages.
+$message-alert-color: #fff6bf !default;
+$message-error-color: #fbe3e4 !default;
+$message-notice-color: #e5edf8 !default;
+$message-success-color: #e6efc2 !default;
+$message-cookiebar-color: $action-color !default;

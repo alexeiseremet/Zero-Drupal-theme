@@ -1,0 +1,66 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      assets/public/css/styles.css: { }
+
+global-scripts:
+  version: VERSION
+  js:
+    assets/public/js/lib/modernizr.min.js: { minified: true }
+    assets/public/js/lib/ofi.min.js: { minified: true }
+    assets/public/js/scripts.js: { minified: true }
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+
+fonts:
+  version: VERSION
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Montserrat:500|Open+Sans:400,400i,700': { type: external }
+
+animate:
+  version: VERSION
+  css:
+    component:
+      '//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css': { type: external, minified: true }
+  dependencies:
+    - core/jquery
+    - zero/waypoints
+
+cookiebar:
+  version: VERSION
+  js:
+    '//cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js': { type: external, minified: true }
+  dependencies:
+    - core/jquery
+
+magnific:
+  version: VERSION
+  css:
+    component:
+      '//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css': { type: external, minified: true }
+  js:
+    '//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js': { type: external, minified: true }
+  dependencies:
+    - core/jquery
+
+slick:
+  version: VERSION
+  css:
+    component:
+      '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css': { type: external, minified: true }
+  js:
+    '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js': { type: external, minified: true }
+  dependencies:
+    - core/jquery
+
+waypoints:
+  version: VERSION
+  js:
+    '//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js': { type: external, minified: true }
+    '//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js': { type: external, minified: true }
+  dependencies:
+    - core/jquery

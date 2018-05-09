@@ -1,0 +1,9 @@
+{
+  "kss": true,
+  "attributes": "",
+  "modifier_class": "",
+  "children": [
+    "component-hero-banner",
+    "component-text-block"
+  ]
+}

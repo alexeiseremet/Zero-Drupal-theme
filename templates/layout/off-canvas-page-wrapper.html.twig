@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Theme override for page wrapper.
+ */
+#}
+
+{% if children %}
+  <div class="global__page-wrapper dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    {{ children }}
+  </div>
+{% endif %}

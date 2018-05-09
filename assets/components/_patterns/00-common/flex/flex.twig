@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Flex example.
+ */
+#}
+
+<!-- copy this -->
+<div class="flex">
+  <div class="0">
+    {{ teaser|slice(0, 20) }}
+  </div>
+  <div class="0">
+    {{ teaser }}
+  </div>
+</div>
+
+<!-- copy this -->
+<div class="flex flex--fit">
+  <div class="0">
+    {{ teaser|slice(0, 20) }}
+  </div>
+  <div class="0">
+    {{ teaser }}
+  </div>
+</div>
+
+<!-- copy this -->
+<div class="flex">
+  <div class="flex__item-grow">
+    {{ teaser|slice(0, 20) }}
+  </div>
+  <div class="0">
+    {{ teaser }}
+  </div>
+</div>

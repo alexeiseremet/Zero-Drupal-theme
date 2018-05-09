@@ -1,0 +1,19 @@
+.menu,
+.inline-list,
+.links.inline {
+  @extend %inline-list;
+
+  > li {
+    position: relative;
+    font-size: $base-font-size;
+  }
+}
+
+.menu--level-3,
+.menu--level-4 {
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+}

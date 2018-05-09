@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ */
+#}
+
+{%
+  set classes = classes ?? [
+    'post',
+    'post--' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'post--promoted',
+    node.isSticky() ? 'post--sticky',
+    not node.isPublished() ? 'post--unpublished',
+    view_mode ? 'post--' ~ view_mode|clean_class,
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+  <div class="post__inner">
+    <header class="post__header">
+      {{ title_prefix }}
+      {% if not page %}
+        <h1{{ title_attributes.addClass('post__title') }}>
+          {{ label }}
+        </h1>
+      {% endif %}
+      {{ title_suffix }}
+
+      {% if display_submitted %}
+        <div class="post__meta">
+          <div{{ author_attributes.addClass('post__submitted') }}>
+            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          </div>
+        </div>
+      {% endif %}
+    </header>
+
+    {% if content.field_teaser %}
+      <div class="post__teaser">
+        {{ content.field_teaser }}
+      </div>
+    {% endif %}
+
+    <div{{ content_attributes.addClass('post__body') }}>
+      {{ content.field_children }}
+    </div>
+  </div>
+</article>

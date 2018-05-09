@@ -1,0 +1,10 @@
+{#
+/**
+ * @file
+ * Twig component.
+ */
+#}
+
+{% macro svg(name) %}
+  {% include '@svg/' ~ name ~ '.svg' %}
+{% endmacro %}

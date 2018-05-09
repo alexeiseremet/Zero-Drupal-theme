@@ -1,0 +1,31 @@
+// Tables
+//
+// Markup: tables.twig
+//
+// Style guide: Common.Tables
+
+table {
+  border-collapse: collapse;
+  font-feature-settings: "kern", "liga", "tnum";
+  margin: $small-spacing 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th {
+  border-bottom: .2rem solid $base-border-color;
+  font-weight: 600;
+  padding: $small-spacing;
+  text-align: left;
+}
+
+td {
+  border-bottom: $base-border;
+  padding: $small-spacing;
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}

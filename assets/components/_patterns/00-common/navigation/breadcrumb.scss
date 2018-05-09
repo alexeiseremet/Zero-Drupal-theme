@@ -1,0 +1,24 @@
+.breadcrumb {
+  margin: $base-spacing 0;
+}
+
+.breadcrumb__list {
+  @extend %inline-list;
+}
+
+.breadcrumb__list-item {
+  @extend %separator--right;
+}
+
+.breadcrumb__link {
+  color: $breadcrumb-color;
+
+  &:hover {
+    color: $breadcrumb-color-hover;
+  }
+}
+
+.breadcrumb__text {
+  color:$breadcrumb-color-active;
+}
+

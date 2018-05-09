@@ -1,0 +1,14 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 0
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+cookiebar:
+  message:
+    value: "<p>This website or its third party tools use cookies, which are necessary to its functioning and required to achieve the purposes illustrated in the cookie policy. If you want to know more or withdraw your consent to all or some of the cookies, please refer to the <a href=\";\">cookie policy</a>.</p>\r\n\r\n<p>By closing this banner, scrolling this page, clicking a link or continuing to browse otherwise, you agree to the use of cookies.</p>\r\n"
+    format: basic_html
+  button: Close

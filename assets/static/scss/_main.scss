@@ -1,0 +1,52 @@
+// Base
+//
+// This file loads all files.
+//
+// Style guide: Base
+
+@charset "UTF-8";
+
+// Required imports.
+@import "normalize.css";
+@import "mappy-breakpoints";
+@import "variables";
+@import "fonts";
+@import "mixins";
+@import "extends";
+
+
+// Import commons.
+@import "../../components/_patterns/00-common/base/lists";
+@import "../../components/_patterns/00-common/base/forms";
+@import "../../components/_patterns/00-common/base/tables";
+@import "../../components/_patterns/00-common/base/typography";
+@import "../../components/_patterns/00-common/buttons/buttons";
+@import "../../components/_patterns/00-common/flex/flex";
+@import "../../components/_patterns/00-common/icons/icons";
+@import "../../components/_patterns/00-common/layout/footer";
+@import "../../components/_patterns/00-common/layout/global";
+@import "../../components/_patterns/00-common/layout/header";
+@import "../../components/_patterns/00-common/layout/layout";
+@import "../../components/_patterns/00-common/layout/user-form";
+@import "../../components/_patterns/00-common/navigation/breadcrumb";
+@import "../../components/_patterns/00-common/navigation/menu";
+@import "../../components/_patterns/00-common/navigation/pager";
+@import "../../components/_patterns/00-common/tile/tile";
+
+// Import components.
+@import "../../components/_patterns/02-component/card/card";
+@import "../../components/_patterns/02-component/carousel/carousel";
+@import "../../components/_patterns/02-component/collapse/collapse";
+@import "../../components/_patterns/02-component/dropdown/dropdown";
+@import "../../components/_patterns/02-component/grid/grid";
+@import "../../components/_patterns/02-component/hero-banner/hero-banner";
+@import "../../components/_patterns/02-component/media/responsive-media";
+@import "../../components/_patterns/02-component/messages/messages";
+@import "../../components/_patterns/02-component/section/section";
+@import "../../components/_patterns/02-component/tabs/tabs";
+@import "../../components/_patterns/02-component/text-block/text-block";
+@import "../../components/_patterns/02-component/person/person";
+
+// Import pages.
+@import "../../components/_patterns/04-pages/pages";
+@import "../../components/_patterns/04-pages/search";

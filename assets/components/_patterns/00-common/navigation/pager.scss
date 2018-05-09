@@ -1,0 +1,15 @@
+.pager {
+  display: flex;
+  justify-content: center;
+  margin-top: $base-spacing;
+}
+
+.pager__items {
+  display: flex;
+  flex-wrap: wrap;
+
+  > li {
+    font-size: $base-font-size;
+    padding: 0 $small-spacing;
+  }
+}

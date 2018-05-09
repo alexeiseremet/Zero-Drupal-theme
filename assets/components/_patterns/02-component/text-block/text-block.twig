@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Text Block w/ CTA button component.
+ *
+ * Available variables:
+ * - attributes: raw.
+ * - modifier_class: string.
+ * - heading_tag: string.
+ * - title: raw.
+ * - text: raw.
+ * - children: raw.
+ * - cta_button: raw.
+ * - more_button: raw.
+ * - video_button: object.
+ */
+#}
+
+{% set heading_tag = heading_tag|default('h3') %}
+
+{% spaceless %}
+<div class="text-block {{ modifier_class }}"{{ attributes }}>
+  <div class="text-block__inner">
+    {% if heading %}
+      <div class="text-block__title">
+        <{{ heading_tag }}>{{ heading }}</{{ heading_tag }}>
+      </div>
+    {% endif %}
+
+    {% if text %}
+      <div class="text-block__text">
+        {{ text }}
+      </div>
+    {% endif %}
+
+  {% if children %}
+    <div class="text-block__children">
+      {{ children }}
+    </div>
+  {% endif %}
+
+    {% if cta_button %}
+      <div class="text-block__cta-button">
+        {{ cta_button }}
+      </div>
+    {% endif %}
+
+    {% if more_button %}
+      <div class="text-block__more-button">
+        {{ more_button }}
+      </div>
+    {% endif %}
+
+    {% if video_button.title and video_button.url %}
+      <div class="text-block__cta-button">
+        {{ link(video_button.title ?: 'Watch the video', video_button.url, { 'class':['js-mfp-video', 'button']} ) }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endspaceless %}

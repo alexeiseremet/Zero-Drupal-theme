@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Hero banner component.
+ *
+ * Available variables:
+ * - attributes: raw.
+ * - modifier_class: string.
+ * - image: raw.
+ * - video: raw.
+ * - heading_tag: string.
+ * - title: string.
+ * - body: raw.
+ */
+#}
+
+{% import '@macro/svg.macro.twig' as svg_macro %}
+
+{% set heading_tag = heading_tag|default('h1') %}
+
+{% spaceless %}
+  <div class="hero-banner {{ modifier_class }}"{{ attributes }}>
+    {% if image %}
+      <div class="hero-banner__image">
+        {{ image }}
+      </div>
+    {% elseif video %}
+      <div class="hero-banner__video">
+        {{ video }}
+      </div>
+    {% endif %}
+
+    <div class="hero-banner__content">
+      {% if heading %}
+        <div class="hero-banner__title">
+          <{{ heading_tag }}>{{ heading }}</{{ heading_tag }}>
+        </div>
+      {% endif %}
+
+      {% if text %}
+        <div class="hero-banner__text">
+          {{ text }}
+        </div>
+      {% endif %}
+
+      {% if cta_button %}
+        <div class="hero-banner__cta-button">
+          {{ cta_button }}
+        </div>
+      {% endif %}
+
+      {% if play_button %}
+        {% set icon_play %}
+          <span class="icon">
+            {{ svg_macro.svg('icon__' ~ play_button.icon) }}
+          </span>
+          {{ 'Play'|t }}
+        {% endset %}
+
+        <div class="hero-banner__play-button">
+          {{ link(icon_play, play_button.url)|raw }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endspaceless %}

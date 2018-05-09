@@ -1,0 +1,114 @@
+// Carousel
+//
+// Markup: carousel.twig
+//
+// Style guide: Component.Carousel
+
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.carousel__node {
+  position: relative;
+}
+
+// Slick styles.
+.slick-list {
+  min-height: 12rem;
+
+  @include mappy-bp(max-width small) {
+    margin-bottom: 3rem !important;
+  }
+}
+
+.slick-slide {
+  outline: none;
+}
+
+.slick-arrow,
+.slick-dots button {
+  position: relative;
+  display: block;
+  padding: 0;
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  outline: none;
+  z-index: 10;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 6.4rem;
+  height: 6.4rem;
+  opacity: .2;
+
+  @include mappy-bp(max-width small) {
+    display: none !important;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.slick-prev {
+  background-image: url(#{$svg_src}/icon__prev-white.svg);
+  left: 2rem;
+}
+
+.slick-next {
+  background-image: url(#{$svg_src}/icon__next-white.svg);
+  right: 2rem;
+}
+
+.slick-dots {
+  @extend %inline-list;
+  justify-content: center;
+  position: absolute;
+  left: calc(50% + #{$small-spacing / 2});
+  transform: translate(-50%, 0);
+  bottom: -3rem;
+
+  @include mappy-bp(small) {
+    bottom: 3rem;
+  }
+
+  button {
+    height: 2rem;
+    width: 2rem;
+
+    &::before {
+      @extend %absolute-center;
+      content: "\00A0";
+      border: .1rem solid $medium-gray;
+      border-radius: 10rem;
+      height: 1rem;
+      width: .5rem;
+      opacity: .5;
+
+      @include mappy-bp(small) {
+        border-color: $white;
+      }
+    }
+  }
+}
+
+.slick-active button::before {
+  background-color: $medium-gray;
+
+  @include mappy-bp(small) {
+    background-color: $white;
+  }
+}

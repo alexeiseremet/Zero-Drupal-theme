@@ -1,0 +1,33 @@
+// Section
+//
+// Markup: section.twig
+//
+// Style guide: Component.Section
+
+.section {
+  @extend %full-width;
+}
+
+.section__inner {
+  position: relative;
+  padding-top: $base-spacing;
+  padding-bottom: $base-spacing;
+
+  @include mappy-bp(medium) {
+    padding-top: $large-spacing;
+    padding-bottom: $large-spacing;
+  }
+
+  &--0 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.animated {
+  opacity: 0;
+
+  &.fadeIn {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_children
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.carousel
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.layout_wrapper
+    - paragraphs.paragraphs_type.tabs
+    - paragraphs.paragraphs_type.text_block
+  module:
+    - entity_reference_revisions
+id: paragraph.text_block.field_children
+field_name: field_children
+entity_type: paragraph
+bundle: text_block
+label: 'Text block children'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion: accordion
+      carousel: carousel
+      image: image
+      layout_wrapper: layout_wrapper
+      tabs: tabs
+    target_bundles_drag_drop:
+      accordion:
+        enabled: true
+        weight: 10
+      carousel:
+        enabled: true
+        weight: 11
+      hero_banner:
+        weight: 12
+        enabled: false
+      image:
+        enabled: true
+        weight: 13
+      layout_wrapper:
+        enabled: true
+        weight: 14
+      quote:
+        weight: 15
+        enabled: false
+      section:
+        weight: 16
+        enabled: false
+      tabs:
+        enabled: true
+        weight: 17
+      text_block:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

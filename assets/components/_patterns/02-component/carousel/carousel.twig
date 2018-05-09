@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Carousel component.
+ *
+ * Available variables:
+ * - attributes: raw.
+ * - modifier_class: string.
+ * - nodes: array.
+ */
+#}
+
+{% spaceless %}
+  <div class="carousel js-carousel {{ modifier_class }}"{{ attributes }}>
+    {% for child in children %}
+      <div class="carousel__node js-carousel-node">
+        {{ child }}
+      </div>
+    {% endfor %}
+  </div>
+{% endspaceless %}

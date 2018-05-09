@@ -1,0 +1,84 @@
+// Buttons
+//
+// :hover           - Highlights when hovering.
+// :disabled        - Disabled.
+// .button--primary - Primary.
+// .button--xsmall.button--primary - XSmall Primary.
+//
+// Markup: buttons.twig
+//
+// Style guide: Common.Button
+
+.button {
+  @include heading-regular;
+  @extend %text-truncate;
+  background-color: $white;
+  border: $form-input-border;
+  border-radius: $base-border-radius;
+  color: $action-color;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $base-font-size;
+  padding: $form-input-padding ($form-input-padding * 5);
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color $base-animation;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    background-color: darken($action-color, 10%);
+    color: $white;
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &--xsmall {
+    padding: .1rem .5rem;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+  }
+
+  &--primary {
+    background-color: $action-color;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: darken($action-color, 10%);
+      color: $white;
+    }
+  }
+}
+
+// ============================
+.cta-button-group {
+  @extend %inline-list;
+  justify-content: center;
+  margin-left: 0;
+
+  .cta-button {
+    padding: 0 $base-spacing;
+    margin-bottom: $small-spacing;
+
+    @include mappy-bp(small) {
+      padding: 0 $large-spacing;
+    }
+  }
+}
+
+.cta-button {
+  a {
+    @extend .button;
+    @extend .button--primary;
+  }
+}
+
