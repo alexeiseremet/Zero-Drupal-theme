@@ -17,7 +17,7 @@ var moduleImporter = require('sass-module-importer');
 var browserSync = require('browser-sync').create();
 var del = require('del');
 
-var production = $.util.env.production;
+var development = $.environments.development;
 
 /**
  * If config.js exists, load that config for overriding certain values below.
@@ -61,18 +61,17 @@ gulp.task('sass', function () {
         outputStyle: 'expanded'
       }))
       .on('error', function (error) {
-        $.util.log(error);
         this.emit('end');
       })
       .pipe($.base64())
       .pipe($.autoprefixer(config.autoprefixerOptions))
-      .pipe(production ? $.util.noop() : $.sourcemaps.write() )
+      .pipe(development($.sourcemaps.write()))
       .pipe(gulp.dest('../public/css'));
-      // .pipe($.notify({
-      //   title: "SASS Compiled",
-      //   message: "All SASS files have been recompiled to CSS.",
-      //   onLast: true
-      // }))
+  // .pipe($.notify({
+  //   title: "SASS Compiled",
+  //   message: "All SASS files have been recompiled to CSS.",
+  //   onLast: true
+  // }))
 });
 
 /**
@@ -92,17 +91,16 @@ gulp.task('compress', function () {
       .pipe($.sourcemaps.init())
       .pipe($.uglify())
       .on('error', function (error) {
-        $.util.log(error);
         this.emit('end');
       })
       .pipe($.concat('scripts.js'))
-      .pipe(production ? $.util.noop() : $.sourcemaps.write())
+      .pipe(development($.sourcemaps.write()))
       .pipe(gulp.dest('../public/js'));
-      // .pipe($.notify({
-      //   title: "JS Minified",
-      //   message: "All JS files in the theme have been minified.",
-      //   onLast: true
-      // }))
+  // .pipe($.notify({
+  //   title: "JS Minified",
+  //   message: "All JS files in the theme have been minified.",
+  //   onLast: true
+  // }))
 });
 
 /**
@@ -127,15 +125,14 @@ gulp.task('svg', function () {
         }
       }))
       .on('error', function (error) {
-        $.util.log(error);
         this.emit('end');
       })
       .pipe(gulp.dest('../public/svg'));
-      // .pipe($.notify({
-      //   title: "Sprite Generated",
-      //   message: "All SVG files have been optimized.",
-      //   onLast: true
-      // }))
+  // .pipe($.notify({
+  //   title: "Sprite Generated",
+  //   message: "All SVG files have been optimized.",
+  //   onLast: true
+  // }))
 });
 
 /**
