@@ -1,40 +1,40 @@
 /* jslint node: true */
 
-'use strict';
+'use strict'
 
-var gulp = require('gulp');
-var config = require('./example.config');
+const gulp = require('gulp')
+let config = require('./example.config')
 
 /**
  * Include Gulp plugins
  */
-var $ = require('gulp-load-plugins')({
+const $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'gulp.*'],
   replaceString: /\bgulp[\-.]/
-});
-var fs = require('fs');
-var moduleImporter = require('sass-module-importer');
-var browserSync = require('browser-sync').create();
-var del = require('del');
+})
+const fs = require('fs')
+const moduleImporter = require('sass-module-importer')
+const browserSync = require('browser-sync').create()
+const del = require('del')
 
-var development = $.environments.development;
+const development = $.environments.development
 
 /**
  * If config.js exists, load that config for overriding certain values below.
  */
-function loadConfig() {
+function loadConfig () {
   if (fs.existsSync(__dirname + '/./config.js')) {
-    config = require('./config');
+    config = require('./config')
   }
 
-  return config;
+  return config
 }
 
-loadConfig();
+loadConfig()
 
 gulp.task('clean', function (cb) {
-  del(cb);
-});
+  del(cb)
+})
 
 /**
  * CSS from all SCSS.
@@ -43,36 +43,36 @@ gulp.task('sass', function () {
   del([
     '../public/css/*.css',
     '../public/css/*.css.map'
-  ], {force: true});
+  ], {force: true})
 
   return gulp.src('../static/scss/**/*.scss')
-      .pipe($.sourcemaps.init())
-      .pipe($.sass({
-        importer: moduleImporter(),
-        importOnce: {
-          index: false,
-          css: false,
-          bower: false
-        },
-        indentedSyntax: true,
-        noCache: false,
-        lineNumbers: false,
-        sourceMap: true,
-        outputStyle: 'expanded'
-      }))
-      .on('error', function (error) {
-        this.emit('end');
-      })
-      .pipe($.base64())
-      .pipe($.autoprefixer(config.autoprefixerOptions))
-      .pipe(development($.sourcemaps.write()))
-      .pipe(gulp.dest('../public/css'));
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      importer: moduleImporter(),
+      importOnce: {
+        index: false,
+        css: false,
+        bower: false
+      },
+      indentedSyntax: true,
+      noCache: false,
+      lineNumbers: false,
+      sourceMap: true,
+      outputStyle: 'expanded'
+    }))
+    .on('error', function (error) {
+      this.emit('end')
+    })
+    .pipe($.base64())
+    .pipe($.autoprefixer(config.autoprefixerOptions))
+    .pipe(development($.sourcemaps.write()))
+    .pipe(gulp.dest('../public/css'))
   // .pipe($.notify({
   //   title: "SASS Compiled",
   //   message: "All SASS files have been recompiled to CSS.",
   //   onLast: true
   // }))
-});
+})
 
 /**
  * Concat javascript.
@@ -81,27 +81,30 @@ gulp.task('compress', function () {
   del([
     '../public/js/*.js',
     '../public/js/*.js.map'
-  ], {force: true});
+  ], {force: true})
 
   return gulp.src([
     '../static/js/**/*.js',
     '../components/_patterns/**/*.js',
     '!../**/*.gemini.js'
   ])
-      .pipe($.sourcemaps.init())
-      .pipe($.uglify())
-      .on('error', function (error) {
-        this.emit('end');
-      })
-      .pipe($.concat('scripts.js'))
-      .pipe(development($.sourcemaps.write()))
-      .pipe(gulp.dest('../public/js'));
+    .pipe($.sourcemaps.init())
+    .pipe($.babel({
+      presets: ['@babel/env']
+    }))
+    .pipe($.uglify())
+    .on('error', function (error) {
+      this.emit('end')
+    })
+    .pipe($.concat('scripts.js'))
+    .pipe(development($.sourcemaps.write()))
+    .pipe(gulp.dest('../public/js'))
   // .pipe($.notify({
   //   title: "JS Minified",
   //   message: "All JS files in the theme have been minified.",
   //   onLast: true
   // }))
-});
+})
 
 /**
  * SVG files.
@@ -109,47 +112,47 @@ gulp.task('compress', function () {
 gulp.task('svg', function () {
   del([
     '../public/svg/*.svg'
-  ], {force: true});
+  ], {force: true})
 
   return gulp.src('../static/svg/**/*.svg')
-      .pipe($.svgSprite({
-        shape: {
-          id: {
-            separator: '__'
-          },
-          dest: './'
+    .pipe($.svgSprite({
+      shape: {
+        id: {
+          separator: '__'
         },
-        svg: {
-          xmlDeclaration: false,
-          doctypeDeclaration: false
-        }
-      }))
-      .on('error', function (error) {
-        this.emit('end');
-      })
-      .pipe(gulp.dest('../public/svg'));
+        dest: './'
+      },
+      svg: {
+        xmlDeclaration: false,
+        doctypeDeclaration: false
+      }
+    }))
+    .on('error', function (error) {
+      this.emit('end')
+    })
+    .pipe(gulp.dest('../public/svg'))
   // .pipe($.notify({
   //   title: "Sprite Generated",
   //   message: "All SVG files have been optimized.",
   //   onLast: true
   // }))
-});
+})
 
 /**
  * Style guide.
  */
 gulp.task('styleguide', $.shell.task([
-      'php core/console --generate'
-    ], {cwd: '../'})
-);
+    'php core/console --generate'
+  ], {cwd: '../'})
+)
 
 /**
  * Visual tests.
  */
 gulp.task('test', $.shell.task([
-      'gemini-gui --config ../.gemini.yml'
-    ])
-);
+    'gemini-gui --config ../.gemini.yml'
+  ])
+)
 
 /**
  * Browser Sync.
@@ -166,8 +169,8 @@ gulp.task('browser-sync', function () {
     snippetOptions: {
       blacklist: ['**/index.html', '**/patternlab/', '**/?p*']
     }
-  });
-});
+  })
+})
 
 /**
  * Watcher task.
@@ -175,27 +178,27 @@ gulp.task('browser-sync', function () {
 gulp.task('watch', function () {
   // watch scss for changes
   gulp.watch(['../{static/scss,components/_patterns}/**/*.scss'], ['sass', 'styleguide'])
-      .on('change', browserSync.reload);
+    .on('change', browserSync.reload)
 
   // watch js for changes
   gulp.watch(['../{static/js,components/_patterns}/**/*.js'], ['compress', 'styleguide'])
-      .on('change', browserSync.reload);
+    .on('change', browserSync.reload)
 
   // watch svg for changes
   gulp.watch(['../{static/svg,components/_patterns}/**/*.svg'], ['svg', 'styleguide'])
-      .on('change', browserSync.reload);
+    .on('change', browserSync.reload)
 
   // watch twig&json for changes
   gulp.watch(['../components/**/*.{twig,json}'], ['styleguide'])
-      .on('change', browserSync.reload);
+    .on('change', browserSync.reload)
 
   // If user has specified an override
   if (!config.twig.useCache) {
     gulp.watch(['../templates/**/*.twig'])
-        .on('change', browserSync.reload);
+      .on('change', browserSync.reload)
   }
-});
+})
 
-gulp.task('guide', ['styleguide']);
-gulp.task('build', ['sass', 'compress', 'svg']);
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('guide', ['styleguide'])
+gulp.task('build', ['sass', 'compress', 'svg'])
+gulp.task('default', ['browser-sync', 'watch'])

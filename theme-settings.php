@@ -14,17 +14,17 @@ function zero_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormSta
     return;
   }
 
-  $form['cookiebar'] = array(
+  $form['cookiebar'] = [
     '#type' => 'details',
     '#title' => t('Cookie compliance'),
     '#tree' => TRUE,
     '#open' => TRUE,
-  );
+  ];
 
-  $form['cookiebar']['message'] = array(
+  $form['cookiebar']['message'] = [
     '#type' => 'text_format',
     '#title' => t('Message'),
     '#default_value' => theme_get_setting('cookiebar.message.value'),
     '#format' => filter_default_format(),
-  );
+  ];
 }

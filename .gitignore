@@ -1,6 +1,6 @@
 # NPM
-assets/.npm/config.js
-assets/.npm/node_modules
+assets/npm/config.js
+assets/npm/node_modules
 
 # Statics
 assets/public/css/styles.css
