@@ -146,16 +146,6 @@
   justify-content: flex-start;
 }
 
-@mixin griddle-gutter($size: $grid-gutter-sm) {
-  margin-top: -$small-spacing;
-  margin-left: -#{$size};
-
-  > [class^="grid__col"] {
-    padding-left: $size;
-    margin: $small-spacing 0;
-  }
-}
-
 @mixin dropdown() {
   visibility: hidden;
   opacity: 0;

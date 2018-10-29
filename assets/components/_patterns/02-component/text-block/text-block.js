@@ -7,9 +7,9 @@
 /* global jQuery, window, document, Modernizr, Drupal */
 
 ;(function ($) {
-  'use strict';
+  'use strict'
 
-  var target_elem = '.js-mfp-video';
+  const target_elem = '.js-mfp-video'
 
   Drupal.behaviors.videoPopup = {
     attach: function (context) {
@@ -33,18 +33,18 @@
           callbacks: {
             beforeOpen: function () {
               if (Modernizr.touch) {
-                $('html').addClass('mfp-helper');
+                $('html').addClass('mfp-helper')
               }
             },
             afterClose: function () {
               if (Modernizr.touch) {
-                $('html').removeClass('mfp-helper');
+                $('html').removeClass('mfp-helper')
               }
             }
           }
-        });
-      });
+        })
+      })
     }
-  };
+  }
 
-}(jQuery));
+}(jQuery))

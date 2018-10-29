@@ -9,7 +9,6 @@
 //
 // Style guide: Patterns.Grid
 
-
 // Griddle functions.
 @mixin griddle($suffix: xsmall) {
   @for $i from 1 through $grid-columns {
@@ -22,6 +21,16 @@
     .grid > .grid__col-#{$i}#{\@+$suffix} {
       @include flex-width(percentage($i / $grid-columns));
     }
+  }
+}
+
+@mixin griddle-gutter($size: $grid-gutter-sm) {
+  margin-top: -$small-spacing;
+  margin-left: -#{$size};
+
+  > [class^="grid__col"] {
+    padding-left: $size;
+    margin: $small-spacing 0;
   }
 }
 

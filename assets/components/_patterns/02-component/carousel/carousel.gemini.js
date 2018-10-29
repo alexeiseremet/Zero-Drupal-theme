@@ -1,11 +1,11 @@
 /* jslint node: true */
 
-'use strict';
+'use strict'
 
-var suite = require('../../../../.npm/suites.gemini');
+var suite = require('../../../../npm/suites.gemini')
 
 // TILE.
 suite({
   suiteName: 'component-carousel',
   selector: '#component-carousel'
-});
+})

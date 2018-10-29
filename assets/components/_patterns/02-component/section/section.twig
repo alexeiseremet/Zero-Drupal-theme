@@ -7,7 +7,7 @@
  * - attributes: raw.
  * - modifier_class: string.
  * - container_class: string.
- * - content: raw.
+ * - children: array of items.
  */
 #}
 
@@ -16,10 +16,10 @@
     <div class="section__inner {{ 'section__inner--' ~ container_class  }}">
       {% if container_class != '0' %}
         <div class="{{ container_class }}">
-          {{ content }}
+          {{ children }}
         </div>
       {% else %}
-        {{ content }}
+        {{ children }}
       {% endif %}
     </div>
   </div>

@@ -2,7 +2,7 @@
 
 'use strict';
 
-var suite = require('../../../../.npm/suites.gemini');
+var suite = require('../../../../npm/suites.gemini');
 
 // BUTTONS.
 suite({

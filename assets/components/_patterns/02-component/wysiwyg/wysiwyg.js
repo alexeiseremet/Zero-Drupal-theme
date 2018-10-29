@@ -7,13 +7,13 @@
 /* global jQuery, window, document, Modernizr, Drupal */
 
 ;(function ($) {
-  'use strict';
+  'use strict'
 
   // Drupal Behaviors.
   Drupal.behaviors.wysiwyg = {
     attach: function (context, settings) {
       // code
     }
-  };
+  }
 
-}(jQuery));
+}(jQuery))

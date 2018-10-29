@@ -7,33 +7,33 @@
 /* global jQuery, window, document, Modernizr, Drupal */
 
 ;(function ($) {
-  'use strict';
+  'use strict'
 
   // Drupal Behaviors.
   Drupal.behaviors.Carousel = {
     attach: function (context, settings) {
-      var $carousel = $('.js-carousel', context);
+      const $carousel = $('.js-carousel', context)
       // var classBtnPrev = '.js-carousel-btn-prev';
       // var classBtnNext = '.js-carousel-btn-next';
 
-      var globalCarouselOptions = {
+      const globalCarouselOptions = {
         adaptiveHeight: true,
         infinite: true,
         fade: true,
         touchThreshold: 10,
         swipe: true,
         swipeToSlide: true
-      };
+      }
 
       $carousel.once('carousel').each(function () {
-        var carouselOptions = $.extend({}, {
+        const carouselOptions = $.extend({}, {
           dots: true
-        }, globalCarouselOptions);
+        }, globalCarouselOptions)
 
         // Init Slick.
-        $(this).slick(carouselOptions);
-      });
+        $(this).slick(carouselOptions)
+      })
     }
-  };
+  }
 
-}(jQuery));
+}(jQuery))

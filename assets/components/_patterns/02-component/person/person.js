@@ -7,16 +7,16 @@
 /* global jQuery, window, document, Modernizr, Drupal */
 
 ;(function ($) {
-  'use strict';
+  'use strict'
 
   // Drupal Behaviors.
   Drupal.behaviors.personPopup = {
     attach: function (context, settings) {
       $('.js-person-popup', context).once('personPopup').each(function () {
         $(this).on('click', function (e) {
-          e.preventDefault();
+          e.preventDefault()
 
-          var $popup = $(this).closest('.js-person');
+          const $popup = $(this).closest('.js-person')
 
           $.magnificPopup.open({
             items: {
@@ -29,23 +29,23 @@
             callbacks: {
               beforeOpen: function () {
                 if (Modernizr.touch) {
-                  $('html').addClass('mfp-helper');
+                  $('html').addClass('mfp-helper')
                 }
               },
               open: function () {
-                var $btn = $popup.find('.mfp-close');
-                $popup.parent().append($btn);
+                const $btn = $popup.find('.mfp-close')
+                $popup.parent().append($btn)
               },
               afterClose: function () {
                 if (Modernizr.touch) {
-                  $('html').removeClass('mfp-helper');
+                  $('html').removeClass('mfp-helper')
                 }
               }
             }
-          });
-        });
-      });
+          })
+        })
+      })
     }
-  };
+  }
 
-}(jQuery));
+}(jQuery))

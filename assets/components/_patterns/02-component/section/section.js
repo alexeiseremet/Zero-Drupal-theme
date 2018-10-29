@@ -7,27 +7,27 @@
 /* global jQuery, window, document, Modernizr, Drupal */
 
 ;(function ($) {
-  'use strict';
+  'use strict'
 
   // Animate section.
   Drupal.behaviors.animate = {
     attach: function (context, settings) {
-      var $animated = $('[data-animated]', context);
+      const $animated = $('[data-animated]', context)
 
-      if($animated.length) {
-        $animated.once('animated').each(function(i){
-          var $elem = $(this);
-          setTimeout(function(){
+      if ($animated.length) {
+        $animated.once('animated').each(function (i) {
+          const $elem = $(this)
+          setTimeout(function () {
             $elem.waypoint(function () {
-              $elem.addClass($elem.data('animated'));
+              $elem.addClass($elem.data('animated'))
             }, {
               offset: '100%'
-            });
-          }, 250 * i);
-        });
+            })
+          }, 250 * i)
+        })
       }
 
     }
-  };
+  }
 
-}(jQuery));
+}(jQuery))
