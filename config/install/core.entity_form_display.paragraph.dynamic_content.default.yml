@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.dynamic_content.field_dynamic_content
+    - paragraphs.paragraphs_type.dynamic_content
+  module:
+    - block_field
+id: paragraph.dynamic_content.default
+targetEntityType: paragraph
+bundle: dynamic_content
+mode: default
+content:
+  field_dynamic_content:
+    weight: 0
+    settings:
+      configuration_form: hidden
+      plugin_id: ''
+      settings: {  }
+    third_party_settings: {  }
+    type: block_field_default
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

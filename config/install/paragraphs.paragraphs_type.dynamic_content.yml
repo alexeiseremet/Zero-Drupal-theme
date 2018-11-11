@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: dynamic_content
+label: 'Dynamic content'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
