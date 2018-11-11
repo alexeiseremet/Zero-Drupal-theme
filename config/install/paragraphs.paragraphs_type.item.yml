@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: item
+label: Item
+icon_uuid: null
+description: 'Item for Accordion, Carousel or Tabs'
+behavior_plugins: {  }
