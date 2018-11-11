@@ -48,10 +48,10 @@ $font-base: "Open Sans", sans-serif !default;
 $font-primary-regular: "Montserrat", sans-serif !default;
 
 $base-font-family: $font-base !default;
-$heading-font-family: $font-primary-regular !default;
 $base-font-size: 1.4rem !default;
 $base-font-color: $dark-gray !default;
 $base-line-height: 1.7 !default;
+$heading-font-family: $font-primary-regular !default;
 
 // Sizes.
 $base-border-radius: 0 !default;
@@ -63,6 +63,7 @@ $small-spacing: $base-spacing / 2 !default;
 // Border.
 $base-border-color: $light-gray !default;
 $base-border: .1rem solid $base-border-color !default;
+$base-border-transparent: .1rem solid transparent !default;
 
 // Forms.
 $form-input-padding: .6rem !default;

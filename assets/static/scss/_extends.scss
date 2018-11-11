@@ -59,12 +59,26 @@
 
 %separator--right {
   &::after {
-    content: '\2022';
+    content: '\2044';
     float: right;
     margin-left: $small-spacing;
   }
 
   &:last-child::after {
     content: none;
+  }
+}
+
+%button-link {
+  @extend %a;
+  border: none;
+  width: auto;
+  background: transparent;
+  text-align: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
   }
 }

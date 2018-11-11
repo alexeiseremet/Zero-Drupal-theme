@@ -7,59 +7,44 @@
 /* global jQuery, window, document, Modernizr, Drupal */
 
 ;(function ($) {
-  'use strict';
+  'use strict'
 
-  var activeClass = 'is-active';
-  var showClass = 'is-open';
+  const activeClass = 'is-active'
 
   Drupal.behaviors.collapseAccordion = {
     attach: function (context, settings) {
-      var trigger = '[data-collapse="accordion"]';
-      var $btn = $(trigger, context);
-      var accordionWrap = '.js-accordion';
-      var accordionItem = '.js-accordion-item';
-      var $accordion = $(accordionWrap, context);
-      var content = '.js-accordion-content';
+      const clickHandler = '[data-collapse="accordion"]'
+      const accordionItem = '.js-accordion-item'
 
-      $accordion.once('accordion').each(function () {
-        $btn.on('click', function (e) {
-          e.preventDefault();
+      $(document).once('accordion').on('click', clickHandler, function (e) {
+        e.preventDefault()
 
-          var targetID = $(this).attr('href');
-          var $thisClosest = $(this).closest(accordionWrap);
-          var $thisParent = $(this).closest(accordionItem);
+        const $self = $(this)
+        const $thisParent = $self.closest(accordionItem)
+        const isActive = $thisParent.hasClass(activeClass)
 
-          // Reset active items.
-          if (!$thisParent.hasClass(showClass)) {
-            $thisClosest.find(accordionItem).removeClass(showClass);
-            $thisClosest.find(content).slideUp('fast');
-          }
-
-          // Toggle active item.
-          $thisParent.toggleClass(showClass);
-          $thisParent.find(targetID).slideToggle('fast');
-        });
-
-        // Make active first item in accordion.
-        $(trigger, $(this)).first().trigger('click');
-      });
+        // Toggle active item.
+        $thisParent.toggleClass(activeClass)
+        $self.attr('aria-expanded', !isActive)
+      })
     }
-  };
+  }
 
   Drupal.behaviors.collapseToggle = {
     attach: function (context, settings) {
-      var trigger = '[data-collapse="toggle"]';
+      const clickHandler = '[data-collapse="toggle"]'
 
-      $(trigger, context).once('toggle').on('click', function (e) {
-        e.preventDefault();
+      $(document).once('toggle').on('click', clickHandler, function (e) {
+        e.preventDefault()
 
-        var targetID = $(this).attr('href');
+        const $self = $(this)
+        const targetID = $self.attr('aria-controls')
 
         // Toggle item.
-        $(targetID).toggleClass(showClass);
-        $(this).parent().toggleClass(activeClass);
-      });
+        $(targetID).toggleClass(activeClass)
+        $self.parent().toggleClass(activeClass)
+      })
     }
-  };
+  }
 
-}(jQuery));
+}(jQuery))

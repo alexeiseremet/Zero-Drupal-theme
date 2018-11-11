@@ -5,7 +5,6 @@
 // Style guide: Patterns.Tile
 
 .tile {
-  position: relative;
   background-color: $medium-gray;
   overflow: hidden;
 
@@ -20,10 +19,8 @@
 }
 
 .tile__content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  @extend %absolute-cover;
+  top: auto;
   padding: $small-spacing;
   color: $white;
 }

@@ -24,11 +24,16 @@
 
 @mixin base-bold {
   font-family: $font-base;
-  font-weight: 500;
+  font-weight: 700;
   font-style: italic;
 }
 
 @mixin heading-regular {
   font-family: $font-primary-regular;
-  font-weight: normal;
+  font-weight: 400;
+}
+
+@mixin heading-bold {
+  font-family: $font-primary-regular;
+  font-weight: 700;
 }

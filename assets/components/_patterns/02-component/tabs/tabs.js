@@ -7,41 +7,29 @@
 /* global $, jQuery, Modernizr, Drupal, enquire */
 
 ;(function ($) {
-  'use strict';
+  'use strict'
 
-  var activeClass = 'is-active';
+  const activeClass = 'is-active'
 
   Drupal.behaviors.tabsNav = {
     attach: function (context, settings) {
-      var trigger = '[data-collapse="tab"]';
+      const clickHandler = '[data-collapse="tab"]'
 
-      $('.js-tabs', context).once('tabsNav').each(function () {
-        var $btn = $(trigger, $(this));
+      $(document).once('tabsNav').on('click', clickHandler, function (e) {
+        e.preventDefault()
 
-        $btn.on('click', function (e) {
-          e.preventDefault();
+        const $self = $(this)
+        const targetID = $self.attr('aria-controls')
 
-          var $this = $(this);
-          var targetID = $this.attr('href');
-          var $thisParent = $this.parent();
+        // Set current nav item.
+        $self.attr('aria-selected', true).addClass(activeClass)
+          .siblings().attr('aria-selected', false).removeClass(activeClass)
 
-          if (!$thisParent.hasClass(activeClass)) {
-            // Reset active nav items.
-            $thisParent.siblings().removeClass(activeClass);
-            // Activate current nav item.
-            $thisParent.addClass(activeClass);
-          }
-
-          // Reset active content items.
-          $(targetID).siblings().hide();
-          // Show current content item.
-          $(targetID).show();
-        });
-
-        // Make active first item in tabs.
-        $btn.first().trigger('click');
-      });
+        // Show current content item.
+        $(targetID).removeAttr('hidden')
+          .siblings().attr('hidden', true)
+      })
     }
-  };
+  }
 
-}(jQuery));
+}(jQuery))

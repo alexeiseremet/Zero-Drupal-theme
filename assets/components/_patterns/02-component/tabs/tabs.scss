@@ -13,13 +13,32 @@
   position: relative;
 }
 
-.tabs__nav-link {
-  font-size: $base-font-size;
+.tabs__nav-button {
+  @extend %button-link;
 
   &.is-active {
+    color: $action-active-color;
+    pointer-events: none;
   }
 }
 
-.tabs__content-item {
-  display: none;
+.tabs__nav-label {
+  @include heading-regular;
+  font-size: $base-font-size;
+  display: block;
+
+  .tabs__nav-button.is-active & {
+    color: $base-font-color;
+  }
+}
+
+.tabs__content {
+  border: $base-border;
+  margin-top: $small-spacing;
+  padding: $small-spacing;
+}
+
+.tabs__body {
+  position: relative;
+  outline: none;
 }

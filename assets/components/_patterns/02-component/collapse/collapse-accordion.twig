@@ -6,7 +6,7 @@
  * Available variables:
  * - attributes: raw.
  * - modifier_class: string.
- * - children: array of objects.
+ * - children: array of items.
  *   - #label: string.
  *   - content: raw.
  */
@@ -17,20 +17,24 @@
     {% set accordionID = '#accordion-' ~ random() %}
 
     {% for child in children %}
-      {% set itemID = accordionID ~ loop.index %}
+      {% set childID = accordionID ~ loop.index %}
 
-      <div class="accordion__item js-accordion-item">
-        <dt class="accordion__title" role="tab" tabindex="{{ loop.first ? '0' : '-1' }}">
-          <a class="accordion__title-link" data-collapse="accordion"
-             href="{{ itemID }}" aria-expanded="{{ loop.first ? 'true' : 'false' }}">
-            {{ child['#label'] }}
-          </a>
+      <dl class="accordion__item js-accordion-item {{ loop.first ? 'is-active' : '' }}"
+          role="presentation">
+        <dt class="accordion__title" role="heading" aria-level="3">
+          <button class="accordion__title-button"
+                  aria-expanded="{{ loop.first ? 'true' : 'false' }}"
+                  aria-controls="{{ childID }}" data-collapse="accordion"
+                  type="button">
+            {{ child['#paragraph'].get('field_heading').value }}
+          </button>
         </dt>
 
-        <dd id="{{ itemID[1:] }}" class="accordion__content js-accordion-content" role="tabpanel">
-          {{ child['content'] }}
+        <dd id="{{ childID[1:] }}" role="region"
+            class="accordion__content js-accordion-content">
+          {{ child }}
         </dd>
-      </div>
+      </dl>
     {% endfor %}
   </div>
 {% endspaceless %}

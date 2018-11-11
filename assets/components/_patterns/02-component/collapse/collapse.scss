@@ -5,17 +5,30 @@
 // Style guide: Component.Accordion
 
 .accordion {
-  position: relative;
+}
+
+.accordion__item {
+  border: $base-border;
+  margin-bottom: $small-spacing;
 }
 
 .accordion__title {
-  &.is-active {
-  }
+}
+
+.accordion__title-button {
+  @extend %button-link;
+  @include heading-regular;
+  padding: $small-spacing;
+  font-size: $base-font-size;
+  width: 100%;
 }
 
 .accordion__content {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 $small-spacing;
 
-  &.is-open {
+  .accordion__item.is-active > & {
+    max-height: 1000rem;
   }
 }

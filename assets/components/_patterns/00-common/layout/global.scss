@@ -1,5 +1,6 @@
-*, *:before, *:after {
+*, *::before, *::after {
   box-sizing: border-box;
+  position: relative;
 }
 
 html {
@@ -22,7 +23,7 @@ body {
 }
 
 [tabindex="-1"]:focus {
-  outline: none !important;
+  outline: none;
 }
 
 .clearfix {

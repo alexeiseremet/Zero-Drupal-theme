@@ -19,7 +19,7 @@ fonts:
   version: VERSION
   css:
     theme:
-      '//fonts.googleapis.com/css?family=Montserrat:500|Open+Sans:400,400i,700': { type: external }
+      '//fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,400i,700': { type: external }
 
 animate:
   version: VERSION

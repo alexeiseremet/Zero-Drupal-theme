@@ -17,6 +17,10 @@
 }
 
 // ============================
+.menu {
+  position: relative;
+}
+
 .menu--main,
 .menu--account {
   flex-wrap: wrap;
@@ -124,4 +128,9 @@
 .account-navigation__dropdown {
   @include dropdown;
   right: 0;
+}
+
+// ============================
+.toolbar .toolbar-bar .toolbar-tab {
+  position: static; // Fix admin toolbar.
 }
