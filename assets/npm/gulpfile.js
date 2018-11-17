@@ -147,14 +147,6 @@ gulp.task('styleguide', $.shell.task([
 )
 
 /**
- * Visual tests.
- */
-gulp.task('test', $.shell.task([
-    'gemini-gui --config ../.gemini.yml'
-  ])
-)
-
-/**
  * Browser Sync.
  */
 gulp.task('browser-sync', function () {

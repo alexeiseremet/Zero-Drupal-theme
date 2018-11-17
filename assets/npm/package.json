@@ -8,16 +8,16 @@
   "scripts": {
     "build": "gulp build --env=production && gulp guide",
     "dev": "gulp build --env=development && gulp guide && gulp",
-    "test": "gulp test"
+    "test": "gemini test",
+    "test:update": "gemini update"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "browser-sync": "^2.24.7",
     "del": "^3.0.0",
-    "gemini": "^5.9.0",
+    "gemini": "^5.9.1",
     "gemini-browserstack": "^1.1.0",
-    "gemini-gui": "^6.0.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
@@ -33,6 +33,7 @@
     "gulp-twig": "^1.2.0",
     "gulp-uglify": "^3.0.1",
     "gulp-watch": "^5.0.1",
+    "html-reporter": "^2.23.0",
     "mappy-breakpoints": "^0.2.3",
     "normalize.css": "^8.0.0",
     "rimraf": "^2.6.2",
