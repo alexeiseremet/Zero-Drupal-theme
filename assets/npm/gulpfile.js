@@ -58,18 +58,16 @@ gulp.task('sass', function () {
       noCache: false,
       lineNumbers: false,
       sourceMap: true,
-      outputStyle: 'expanded'
+      outputStyle: 'expanded',
+      errLogToConsole: true
     }))
-    .on('error', function (error) {
-      this.emit('end')
-    })
     .pipe($.base64())
     .pipe($.autoprefixer(config.autoprefixerOptions))
     .pipe(development($.sourcemaps.write()))
     .pipe(gulp.dest('../public/css'))
   // .pipe($.notify({
-  //   title: "SASS Compiled",
-  //   message: "All SASS files have been recompiled to CSS.",
+  //   title: 'SASS Compiled',
+  //   message: 'All SASS files have been recompiled to CSS.',
   //   onLast: true
   // }))
 })
@@ -191,6 +189,5 @@ gulp.task('watch', function () {
   }
 })
 
-gulp.task('guide', ['styleguide'])
 gulp.task('build', ['sass', 'compress', 'svg'])
 gulp.task('default', ['browser-sync', 'watch'])

@@ -6,8 +6,8 @@
   ],
   "main": "gulpfile.js",
   "scripts": {
-    "build": "gulp build --env=production && gulp guide",
-    "dev": "gulp build --env=development && gulp guide && gulp",
+    "build": "gulp build --env=production && gulp styleguide",
+    "dev": "gulp build --env=development && gulp styleguide && gulp",
     "test": "gemini test",
     "test:update": "gemini update"
   },
