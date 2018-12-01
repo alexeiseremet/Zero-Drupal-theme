@@ -29,9 +29,8 @@
 }
 
 .person__name {
-  @include heading-regular;
+  @include heading-bold;
   font-size: 1.6rem;
-  text-transform: uppercase;
 }
 
 .person__position {

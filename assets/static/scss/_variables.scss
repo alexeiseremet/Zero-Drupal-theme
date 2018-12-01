@@ -44,13 +44,14 @@ $action-active-color: $dark-gray !default;
 $action-disabled-color: $medium-gray !default;
 
 // Typography.
-$font-base: "Open Sans", sans-serif !default;
+$font-base: Helvetica Neue, Helvetica, Arial, sans-serif !default;
 $font-primary-regular: "Montserrat", sans-serif !default;
 
 $base-font-family: $font-base !default;
 $base-font-size: 1.4rem !default;
 $base-font-color: $dark-gray !default;
 $base-line-height: 1.7 !default;
+$heading-font-size: ($base-font-size * 2.6) !default;
 $heading-font-family: $font-primary-regular !default;
 
 // Sizes.

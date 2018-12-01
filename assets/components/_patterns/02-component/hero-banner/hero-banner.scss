@@ -35,7 +35,7 @@
 }
 
 .hero-banner__title {
-  @include heading-regular;
+  @include heading-bold;
   font-size: 3.3rem;
   line-height: 1.4;
 }

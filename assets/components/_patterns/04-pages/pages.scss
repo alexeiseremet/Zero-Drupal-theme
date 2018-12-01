@@ -1,11 +1,11 @@
 .page-title {
-  @include heading-regular;
-  font-size: 2.6rem;
+  @include heading-bold;
+  font-size: $heading-font-size;
   line-height: 1.2;
   margin-bottom: $small-spacing;
 
   @include mappy-bp(medium) {
-    font-size: 3.8rem;
+    font-size: ($heading-font-size * 1.2);
   }
 }
 
@@ -23,7 +23,7 @@
 }
 
 .post__title {
-  @include heading-regular;
+  @include heading-bold;
 }
 
 .post__meta {

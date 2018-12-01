@@ -23,7 +23,7 @@
 }
 
 .tabs__nav-label {
-  @include heading-regular;
+  @include heading-bold;
   font-size: $base-font-size;
   display: block;
 

@@ -3,5 +3,5 @@
   "attributes": "",
   "modifier_class": "",
   "container_class": "container",
-  "content": "component-wysiwyg"
+  "children": "component-wysiwyg"
 }

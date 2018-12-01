@@ -4,15 +4,15 @@
   "modifier_class": "",
   "children": [
     {
-      "title": "One",
+      "#columns": ["12@small", "3@medium"],
       "content": "component-wysiwyg"
     },
     {
-      "title": "Two",
-      "content": "component-wysiwyg"
+      "#columns": ["12@small", "6@medium"],
+      "content": "component-tabs"
     },
     {
-      "title": "Three",
+      "#columns": ["12@small", "3@medium"],
       "content": "component-wysiwyg"
     }
   ]

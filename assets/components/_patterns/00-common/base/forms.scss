@@ -14,7 +14,7 @@ fieldset {
 legend {
   // Reset the entire legend element to match the `fieldset`.
   width: 100%;
-  font-weight: 600;
+  font-weight: bold;
   padding: 0 1rem;
   margin-bottom: 0;
   line-height: inherit;
@@ -33,7 +33,7 @@ label {
 }
 
 label {
-  @include heading-regular;
+  @include heading-bold;
   @extend %text-truncate;
   margin-bottom: $small-spacing / 2;
 
@@ -152,6 +152,7 @@ select {
     right: 1rem;
     transform: translate(0, -50%);
     pointer-events: none;
+    z-index: 1;
   }
 
   select {

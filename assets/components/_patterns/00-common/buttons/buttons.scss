@@ -10,7 +10,7 @@
 // Style guide: Common.Button
 
 .button {
-  @include heading-regular;
+  @include heading-bold;
   @extend %text-truncate;
   background-color: $white;
   border: $form-input-border;

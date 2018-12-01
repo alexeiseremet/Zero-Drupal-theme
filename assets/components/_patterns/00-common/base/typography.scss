@@ -4,6 +4,17 @@
 //
 // Style guide: Common.Typography
 
+@mixin fontHGroup($baseSize) {
+  @for $i from 1 through 6 {
+    $size: $baseSize - ($i * 0.4);
+
+    h#{$i},
+    .h#{$i} {
+      font-size: $size;
+    }
+  }
+}
+
 h1,
 h2,
 h3,
@@ -66,15 +77,17 @@ img[src*="svg"] {
 .code {
   padding: .2rem .5rem;
   margin: 0 .2rem;
-  font-size: 90%;
+  font-size: 75%;
+  font-weight: normal;
+  vertical-align: middle;
   background: $light-gray;
   border-radius: .4rem;
 }
 
 // ============================
 .text {
+  position: relative;
   font-size: 1.6rem;
-  margin: 0 auto;
   width: 100%;
 
   h1,
@@ -83,8 +96,8 @@ img[src*="svg"] {
   h4,
   h5,
   h6 {
-    @include heading-regular;
-    margin: $base-spacing 0;
+    @include heading-bold;
+    margin: 0 0 $base-spacing 0;
     line-height: 1.4;
   }
 
@@ -92,28 +105,9 @@ img[src*="svg"] {
     text-transform: uppercase;
   }
 
-  // Heading tags
-  @for $i from 1 through 6 {
-    $size: 2.2 - ($i * 0.2);
-
-    h#{$i} {
-      font-size: $size#{rem};
-    }
-  }
-
-  @include mappy-bp(medium) {
-    @for $i from 1 through 6 {
-      $size: 3.6 - ($i * 0.4);
-
-      h#{$i} {
-        font-size: $size#{rem};
-      }
-    }
-  }
-
   p,
   blockquote {
-    margin-bottom: $base-spacing;
+    margin: 0 0 $base-spacing 0;
   }
 
   ul {
@@ -127,22 +121,11 @@ img[src*="svg"] {
   code {
     @extend %code;
   }
-}
 
-// Typography helper
+  // Heading tags
+  @include fontHGroup($heading-font-size * 0.8);
 
-.font-xlarge {
-  font-size: ($base-font-size * 1.4);
-}
-
-.font-large {
-  font-size: ($base-font-size * 1.2);
-}
-
-.font-small {
-  font-size: ($base-font-size * .8);
-}
-
-.font-xsmall {
-  font-size: ($base-font-size * .6);
+  @include mappy-bp(medium) {
+    @include fontHGroup($heading-font-size);
+  }
 }

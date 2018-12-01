@@ -10,17 +10,15 @@
 
 .section__inner {
   position: relative;
-  padding-top: $base-spacing;
-  padding-bottom: $base-spacing;
 
-  @include mappy-bp(medium) {
-    padding-top: $large-spacing;
-    padding-bottom: $large-spacing;
-  }
+  &--container {
+    padding-top: $base-spacing;
+    padding-bottom: $base-spacing;
 
-  &--0 {
-    padding-top: 0;
-    padding-bottom: 0;
+    @include mappy-bp(medium) {
+      padding-top: $large-spacing;
+      padding-bottom: $large-spacing;
+    }
   }
 }
 

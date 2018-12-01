@@ -22,7 +22,7 @@
   min-height: 12rem;
 
   @include mappy-bp(max-width small) {
-    margin-bottom: 3rem !important;
+    margin-bottom: 3rem;
   }
 }
 
@@ -50,12 +50,15 @@
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  width: 6.4rem;
-  height: 6.4rem;
-  opacity: .2;
+  background-color: $light-gray;
+  border-radius: 100px;
+  background-size: 60%;
+  width: 3.6rem;
+  height: 3.6rem;
+  opacity: .5;
 
   @include mappy-bp(max-width small) {
-    display: none !important;
+    display: none;
   }
 
   &:hover {
@@ -81,10 +84,6 @@
   transform: translate(-50%, 0);
   bottom: -3rem;
 
-  @include mappy-bp(small) {
-    bottom: 3rem;
-  }
-
   button {
     height: 2rem;
     width: 2rem;
@@ -97,18 +96,10 @@
       height: 1rem;
       width: .5rem;
       opacity: .5;
-
-      @include mappy-bp(small) {
-        border-color: $white;
-      }
     }
   }
 }
 
 .slick-active button::before {
   background-color: $medium-gray;
-
-  @include mappy-bp(small) {
-    background-color: $white;
-  }
 }

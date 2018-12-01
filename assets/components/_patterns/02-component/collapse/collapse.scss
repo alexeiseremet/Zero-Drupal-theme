@@ -17,7 +17,7 @@
 
 .accordion__title-button {
   @extend %button-link;
-  @include heading-regular;
+  @include heading-bold;
   padding: $small-spacing;
   font-size: $base-font-size;
   width: 100%;

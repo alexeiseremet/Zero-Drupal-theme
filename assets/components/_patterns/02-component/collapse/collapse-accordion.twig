@@ -18,6 +18,8 @@
 
     {% for child in children %}
       {% set childID = accordionID ~ loop.index %}
+      {% set title = child.title ?: child['#paragraph'].get('field_heading').value %}
+      {% set content = child.content ?: child %}
 
       <dl class="accordion__item js-accordion-item {{ loop.first ? 'is-active' : '' }}"
           role="presentation">
@@ -26,13 +28,13 @@
                   aria-expanded="{{ loop.first ? 'true' : 'false' }}"
                   aria-controls="{{ childID }}" data-collapse="accordion"
                   type="button">
-            {{ child['#paragraph'].get('field_heading').value }}
+            {{ title }}
           </button>
         </dt>
 
         <dd id="{{ childID[1:] }}" role="region"
             class="accordion__content js-accordion-content">
-          {{ child }}
+          {{ content }}
         </dd>
       </dl>
     {% endfor %}

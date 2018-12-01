@@ -7,10 +7,11 @@
 
 <div class="grid grid--gutter-lg {{ modifier_class }}"{{ attributes }}>
   {% for child in children %}
-    {% set col_classes = 'grid__col-' ~ child['#columns']|join(' grid__col-') %}
+    {% set col_classes = 'grid__col-' ~ child['#columns']|join(' grid__col-')%}
+    {% set content = child.content ?: child %}
 
     <div class="{{ col_classes }}">
-      {{ child }}
+      {{ content }}
     </div>
   {% endfor %}
 </div>
