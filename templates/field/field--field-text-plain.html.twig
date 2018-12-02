@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ */
+#}
+
+{# Remove 'field_' if field name start with that string. #}
+{% set classes = classes ?? field_name|replace({'field_' : ''})|clean_class %}
+
+{% for item in items %}
+  <span{{ attributes.addClass(classes) }}>{{ item.content }}</span>
+{% endfor %}

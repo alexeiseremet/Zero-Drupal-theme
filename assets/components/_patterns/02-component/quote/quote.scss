@@ -1,0 +1,25 @@
+// Quote
+//
+// Markup: quote.twig
+//
+// Style guide: Component.Quote
+
+.quote {
+  position: relative;
+  margin: 0 auto;
+  padding-left: $large-spacing;
+  border-left: .2rem solid $base-border-color;
+  max-width: 80rem;
+  width: 100%;
+}
+
+.quote__heading {
+  @include heading-bold;
+  font-size: 3rem;
+  line-height: 1.4;
+}
+
+.quote__cite {
+  @include base-regular;
+  font-size: 16px;
+}
