@@ -8,6 +8,8 @@ dependencies:
   module:
     - entity_reference_revisions
     - options
+_core:
+  default_config_hash: YpiyH7Hno1RhnO7TCPu-qPSQh44x9cWUJAERlcnaxGQ
 id: paragraph.section.default
 targetEntityType: paragraph
 bundle: section

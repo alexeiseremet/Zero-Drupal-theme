@@ -6,6 +6,8 @@ dependencies:
     - paragraphs.paragraphs_type.hero_banner
   module:
     - text
+_core:
+  default_config_hash: ipAy9rBbqDV3O-I2hz4BDmZIAuE3i4yvcsw-gN-6lnM
 id: paragraph.hero_banner.field_text
 field_name: field_text
 entity_type: paragraph

@@ -6,6 +6,8 @@ dependencies:
     - paragraphs.paragraphs_type.hero_banner
   module:
     - options
+_core:
+  default_config_hash: JaJARBKaewCBegvn568PLgMpmLlESeaSZ1oEHTGM1rE
 id: paragraph.hero_banner.field_text_align
 field_name: field_text_align
 entity_type: paragraph

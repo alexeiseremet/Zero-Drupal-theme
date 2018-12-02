@@ -6,6 +6,8 @@ dependencies:
     - paragraphs.paragraphs_type.image
   module:
     - image
+_core:
+  default_config_hash: StW-aQQrxuOQIoPKeRfn3QyVnrzXzn7KG-fXG4COuuI
 id: paragraph.image.field_image
 field_name: field_image
 entity_type: paragraph

@@ -6,6 +6,8 @@ dependencies:
     - paragraphs.paragraphs_type.text_block
   module:
     - options
+_core:
+  default_config_hash: qMlmgi1NUNcIwR7zRUsQsxmiNyCDuT899uycP7rKA6k
 id: paragraph.text_block.field_heading_tag
 field_name: field_heading_tag
 entity_type: paragraph

@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: _PnWofKyOIEh0YOAFZfJ7iUy3t_xz9gUFANZDzmfdQE
 id: wysiwyg
 label: Wysiwyg
 icon_uuid: null

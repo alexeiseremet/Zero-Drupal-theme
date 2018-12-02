@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: hl3ObKQix5xNaCsFvJ2Xox2e5o89TyjrCxmRX4pWwH0
 id: dynamic_content
 label: 'Dynamic content'
 icon_uuid: null

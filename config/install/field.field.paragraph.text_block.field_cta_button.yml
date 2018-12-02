@@ -6,6 +6,8 @@ dependencies:
     - paragraphs.paragraphs_type.text_block
   module:
     - link
+_core:
+  default_config_hash: y4nixiB0cW-PwDDsTeUkk0V1QF_jEpDEZ9TuLyotEUk
 id: paragraph.text_block.field_cta_button
 field_name: field_cta_button
 entity_type: paragraph

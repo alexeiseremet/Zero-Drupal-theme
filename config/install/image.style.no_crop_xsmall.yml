@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: _MgFDTju5AbqEOSYnjVzlF1uzg82_ZyKh5qLUDliSh8
 name: no_crop_xsmall
 label: 'No Crop xsmall'
 effects:

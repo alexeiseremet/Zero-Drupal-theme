@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: DmW7Z-25iT4TbB1ex4EptkGki2CQmQloeqHA3muwBzY
 id: quote
 label: Quote
 icon_uuid: null

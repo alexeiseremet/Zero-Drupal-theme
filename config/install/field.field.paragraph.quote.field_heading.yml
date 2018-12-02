@@ -3,17 +3,15 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_heading
-    - paragraphs.paragraphs_type.hero_banner
-_core:
-  default_config_hash: TXfa4bsYjSByysQQO-5tursP2bIjSXdZKr_9MXsRdus
-id: paragraph.hero_banner.field_heading
+    - paragraphs.paragraphs_type.quote
+id: paragraph.quote.field_heading
 field_name: field_heading
 entity_type: paragraph
-bundle: hero_banner
+bundle: quote
 label: Heading
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

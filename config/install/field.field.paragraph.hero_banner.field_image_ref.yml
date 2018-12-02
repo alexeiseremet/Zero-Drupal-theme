@@ -7,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.image
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: mDTdbTOE8oSjftFIYxSkkHdHyH6X0UCn0eR_-wcpGQM
 id: paragraph.hero_banner.field_image_ref
 field_name: field_image_ref
 entity_type: paragraph

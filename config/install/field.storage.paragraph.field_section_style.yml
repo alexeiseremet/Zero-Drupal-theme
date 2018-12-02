@@ -4,6 +4,8 @@ dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: jmkV6yzOX4MdilmFGqMsOKlCH7yf8ZDhJ4IFRHDFzdg
 id: paragraph.field_section_style
 field_name: field_section_style
 entity_type: paragraph

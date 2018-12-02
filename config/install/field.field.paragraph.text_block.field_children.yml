@@ -11,6 +11,8 @@ dependencies:
     - paragraphs.paragraphs_type.text_block
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: 5l2f8QEZjcM5B5a5uJeFP5Z6nDNiy8samvG2Cp8xHDw
 id: paragraph.text_block.field_children
 field_name: field_children
 entity_type: paragraph

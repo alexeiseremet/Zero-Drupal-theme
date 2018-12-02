@@ -4,6 +4,8 @@ dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
+_core:
+  default_config_hash: duuQtzTShKeQb_RTdJfBNSdr6_jhehYcWcbmdymH72Q
 id: paragraph.field_image_ref
 field_name: field_image_ref
 entity_type: paragraph

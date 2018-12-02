@@ -6,8 +6,6 @@ dependencies:
     - image.style.no_crop_small_2x
     - image.style.no_crop_xsmall
     - image.style.no_crop_xsmall_2x
-  theme:
-    - zero
 _core:
   default_config_hash: qp5idX1AW3Zxwkme3fzgXBSGA8eQjPzTCPnmN7d2wsU
 id: no_crop_all

@@ -6,6 +6,8 @@ dependencies:
     - paragraphs.paragraphs_type.dynamic_content
   module:
     - block_field
+_core:
+  default_config_hash: lb1rGy4nWZ430PfL_7Q9oyJWT_7jYLHmeWBz53UdDGo
 id: paragraph.dynamic_content.default
 targetEntityType: paragraph
 bundle: dynamic_content

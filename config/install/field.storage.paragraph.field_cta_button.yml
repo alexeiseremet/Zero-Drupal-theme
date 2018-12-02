@@ -4,6 +4,8 @@ dependencies:
   module:
     - link
     - paragraphs
+_core:
+  default_config_hash: nc7WO1ytmlowOia7W2nyLa15sv_yI_9plUN4kxF5XeY
 id: paragraph.field_cta_button
 field_name: field_cta_button
 entity_type: paragraph

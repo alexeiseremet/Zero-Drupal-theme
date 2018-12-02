@@ -7,6 +7,8 @@ dependencies:
     - responsive_image.styles.16_9_all
   module:
     - responsive_image
+_core:
+  default_config_hash: QHpRgdDMqABpZZYa2XQCNeBnY4jqxURqTv3GUxA4_Lw
 id: paragraph.image.default
 targetEntityType: paragraph
 bundle: image

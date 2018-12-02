@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - crop.type.16_9_crop_ratio
   module:
     - crop
 _core:
@@ -21,3 +23,4 @@ effects:
     data:
       width: 767
       height: 432
+      anchor: center-center

@@ -7,8 +7,6 @@ dependencies:
     - image.style.16_9_small_2x
     - image.style.16_9_xsmall
     - image.style.16_9_xsmall_2x
-  theme:
-    - zero
 _core:
   default_config_hash: OGTbauQiTTrrTcrh6rUWMAVIEh8Y5UynVIyUcAij9Ic
 id: 16_9_all

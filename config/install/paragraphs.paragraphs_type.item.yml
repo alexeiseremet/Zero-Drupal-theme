@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 5F4Xly6PofOqZkiE8O-Uc9CIPsv4rq2KpPfO8FBPULY
 id: item
 label: Item
 icon_uuid: null

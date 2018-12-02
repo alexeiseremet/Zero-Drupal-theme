@@ -11,6 +11,8 @@ dependencies:
     - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: IARBD190bRPgfDzk7JJAg3lX5lMF6vQoD33Z7C0hsmY
 id: paragraph.item.field_child
 field_name: field_child
 entity_type: paragraph

@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: MlJLQ2-AQ1BtKJm54rNZoLXtVO8h0n2XoawQK8DjKcU
 name: no_crop_fallback
 label: 'No Crop fallback'
 effects:

@@ -4,6 +4,8 @@ dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: AS0Teymv7qdFljNBPzpHtI8syTiMfYzMgUOOp0VPM84
 id: paragraph.field_heading_tag
 field_name: field_heading_tag
 entity_type: paragraph
