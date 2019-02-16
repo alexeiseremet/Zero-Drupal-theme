@@ -16,10 +16,15 @@
  */
 #}
 
+{% set classes = [
+  'text-block',
+  text_align ? 'text-block--' ~ text_align,
+  drupal_class,
+]|join(' ') %}
+
 {% set heading_tag = heading_tag|default('h3') %}
 
-{% spaceless %}
-<div class="text-block {{ modifier_class }}"{{ attributes }}>
+<div class="{{ classes }}" {{ attributes }}>
   <div class="text-block__inner">
     {% if heading %}
       <div class="text-block__title">
@@ -33,11 +38,11 @@
       </div>
     {% endif %}
 
-  {% if children %}
-    <div class="text-block__children">
-      {{ children }}
-    </div>
-  {% endif %}
+    {% if children %}
+      <div class="text-block__children">
+        {{ children }}
+      </div>
+    {% endif %}
 
     {% if cta_button %}
       <div class="text-block__cta-button">
@@ -53,9 +58,8 @@
 
     {% if video_button.title and video_button.url %}
       <div class="text-block__cta-button">
-        {{ link(video_button.title ?: 'Watch the video', video_button.url, { 'class':['js-mfp-video', 'button']} ) }}
+        {{ link(video_button.title ?: 'Watch the video'|t, video_button.url, { 'class':['js-mfp-video', 'button']} ) }}
       </div>
     {% endif %}
   </div>
 </div>
-{% endspaceless %}

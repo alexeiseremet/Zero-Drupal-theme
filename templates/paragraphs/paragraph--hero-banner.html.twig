@@ -7,11 +7,11 @@
 {%
   include '@component/hero-banner/hero-banner.twig' with {
     'attributes': attributes|without('class'),
-    'modifier_class': attributes.class,
+    'drupal_class': attributes.class,
     'image' : content.field_image_ref,
     'heading_tag': paragraph.field_heading_tag.value,
     'heading': paragraph.field_heading.value ? content.field_heading,
-    'teaser': paragraph.field_text.value ? content.field_text,
+    'text': paragraph.field_text.value ? content.field_text,
     'cta_button': paragraph.field_cta_button.value ? content.field_cta_button
   } only
 %}

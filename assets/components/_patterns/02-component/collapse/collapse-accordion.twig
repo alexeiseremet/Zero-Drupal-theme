@@ -12,31 +12,29 @@
  */
 #}
 
-{% spaceless %}
-  <div class="accordion js-accordion {{ modifier_class }}"{{ attributes }}>
-    {% set accordionID = '#accordion-' ~ random() %}
+<div class="accordion js-accordion {{ drupal_class }}"{{ attributes }}>
+  {% set accordionID = '#accordion-' ~ random() %}
 
-    {% for child in children %}
-      {% set childID = accordionID ~ loop.index %}
-      {% set title = child.title ?: child['#paragraph'].get('field_heading').value %}
-      {% set content = child.content ?: child %}
+  {% for child in children %}
+    {% set childID = accordionID ~ loop.index %}
+    {% set title = child.title ?: child['#paragraph'].get('field_heading').value %}
+    {% set content = child.content ?: child %}
 
-      <dl class="accordion__item js-accordion-item {{ loop.first ? 'is-active' : '' }}"
-          role="presentation">
-        <dt class="accordion__title" role="heading" aria-level="3">
-          <button class="accordion__title-button"
-                  aria-expanded="{{ loop.first ? 'true' : 'false' }}"
-                  aria-controls="{{ childID }}" data-collapse="accordion"
-                  type="button">
-            {{ title }}
-          </button>
-        </dt>
+    <dl class="accordion__item js-accordion-item {{ loop.first ? 'is-active' : '' }}"
+        role="presentation">
+      <dt class="accordion__title" role="heading" aria-level="3">
+        <button class="accordion__title-button"
+                aria-expanded="{{ loop.first ? 'true' : 'false' }}"
+                aria-controls="{{ childID }}" data-collapse="accordion"
+                type="button">
+          {{ title }}
+        </button>
+      </dt>
 
-        <dd id="{{ childID[1:] }}" role="region"
-            class="accordion__content js-accordion-content">
-          {{ content }}
-        </dd>
-      </dl>
-    {% endfor %}
-  </div>
-{% endspaceless %}
+      <dd id="{{ childID[1:] }}" role="region"
+          class="accordion__content js-accordion-content">
+        {{ content }}
+      </dd>
+    </dl>
+  {% endfor %}
+</div>

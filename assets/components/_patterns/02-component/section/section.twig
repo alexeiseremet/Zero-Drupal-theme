@@ -11,16 +11,14 @@
  */
 #}
 
-{% spaceless %}
-  <div class="section js-section {{ modifier_class }}"{{ attributes }}>
-    <div class="section__inner {{ 'section__inner--' ~ container_class  }}">
-      {% if container_class != '0' %}
-        <div class="{{ container_class }}">
-          {{ children }}
-        </div>
-      {% else %}
+<div class="section js-section {{ drupal_class }}"{{ attributes }}>
+  <div class="{{ 'section__inner section__inner--' ~ container_class  }}">
+    {% if container_class != '0' %}
+      <div class="{{ container_class }}">
         {{ children }}
-      {% endif %}
-    </div>
+      </div>
+    {% else %}
+      {{ children }}
+    {% endif %}
   </div>
-{% endspaceless %}
+</div>

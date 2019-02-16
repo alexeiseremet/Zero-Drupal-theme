@@ -16,10 +16,15 @@
 
 {% import '@macro/svg.macro.twig' as svg_macro %}
 
+{% set classes = [
+  'hero-banner',
+  drupal_class,
+]|join(' ') %}
+
 {% set heading_tag = heading_tag|default('h1') %}
 
 {% spaceless %}
-  <div class="hero-banner {{ modifier_class }}"{{ attributes }}>
+  <div class="{{ classes }}" {{ attributes }}>
     {% if image %}
       <div class="hero-banner__image">
         {{ image }}

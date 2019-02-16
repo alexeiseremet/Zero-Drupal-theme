@@ -7,7 +7,7 @@
 {%
   include '@component/quote/quote.twig' with {
     'attributes': attributes|without('class'),
-    'modifier_class': attributes.class,
+    'drupal_class': attributes.class,
     'heading': content.field_heading,
     'cite': content.field_text_plain
   } only

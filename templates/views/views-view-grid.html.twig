@@ -6,31 +6,25 @@
  */
 #}
 
-{%
-  set breackpoint = (options.columns|length is odd)
-                      ? ('0' ~ options.columns)|split('', 2)
-                      : options.columns|split('', 2)
-%}
+{% set breackpoint = (options.columns|length is odd)
+  ? ('0' ~ options.columns)|split('', 2)
+  : options.columns|split('', 2) %}
 
-{%
-  set grid_cls = {
-    xsmall : breackpoint.0|first == '0' ? breackpoint.0[1:] : breackpoint.0,
-    small : breackpoint.1|first == '0'  ? breackpoint.1[1:] : breackpoint.1,
-    medium : breackpoint.2|first == '0' ? breackpoint.2[1:] : breackpoint.2,
-    large : breackpoint.3|first == '0'  ? breackpoint.3[1:] : breackpoint.3,
-  }
-%}
+{% set grid_cls = {
+  xsmall : breackpoint.0|first == '0' ? breackpoint.0[1:] : breackpoint.0,
+  small : breackpoint.1|first == '0'  ? breackpoint.1[1:] : breackpoint.1,
+  medium : breackpoint.2|first == '0' ? breackpoint.2[1:] : breackpoint.2,
+  large : breackpoint.3|first == '0'  ? breackpoint.3[1:] : breackpoint.3,
+} %}
 
-{%
-  set classes = classes ?? [
-    'grid',
-    'grid--gutter',
-    grid_cls.xsmall ? 'grid--col-' ~ grid_cls.xsmall ~ '@xsmall',
-    grid_cls.small  ? 'grid--col-' ~ grid_cls.small ~ '@small',
-    grid_cls.medium ? 'grid--col-' ~ grid_cls.medium ~ '@medium',
-    grid_cls.large  ? 'grid--col-' ~ grid_cls.large ~ '@large',
-  ]
-%}
+{% set classes = classes ?? [
+  'grid',
+  'grid--gutter',
+  grid_cls.xsmall ? 'grid--col-' ~ grid_cls.xsmall ~ '@xsmall',
+  grid_cls.small  ? 'grid--col-' ~ grid_cls.small ~ '@small',
+  grid_cls.medium ? 'grid--col-' ~ grid_cls.medium ~ '@medium',
+  grid_cls.large  ? 'grid--col-' ~ grid_cls.large ~ '@large',
+] %}
 
 {% if title %}
   <div class="grid-header"><h3>{{ title }}</h3></div>
