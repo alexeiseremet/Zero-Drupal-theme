@@ -7,7 +7,7 @@ dependencies:
   module:
     - paragraphs
 _core:
-  default_config_hash: UYNo_hwKOGEG5hyFhbStj754Z78e0x4P11yehovggdM
+  default_config_hash: R0Sm019Mg0mdQOMvolIhg4CPITcEuM-yW3lld-PjWFM
 id: paragraph.accordion.default
 targetEntityType: paragraph
 bundle: accordion
@@ -22,7 +22,7 @@ content:
       edit_mode: closed
       add_mode: select
       form_display_mode: default
-      default_paragraph_type: _none
+      default_paragraph_type: item
     third_party_settings: {  }
     region: content
 hidden:

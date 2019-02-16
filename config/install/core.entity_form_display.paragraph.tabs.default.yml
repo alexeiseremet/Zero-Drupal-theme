@@ -5,7 +5,7 @@ dependencies:
     - field.field.paragraph.tabs.field_children
     - paragraphs.paragraphs_type.tabs
   module:
-    - entity_reference_revisions
+    - paragraphs
 _core:
   default_config_hash: pum0eTc72D2a4-ug2M2yEoHjegmo3GH6pwa9OBYg-DQ
 id: paragraph.tabs.default
@@ -16,11 +16,14 @@ content:
   field_children:
     weight: 0
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: select
+      form_display_mode: default
+      default_paragraph_type: item
     third_party_settings: {  }
-    type: entity_reference_revisions_autocomplete
+    type: entity_reference_paragraphs
     region: content
 hidden:
   created: true

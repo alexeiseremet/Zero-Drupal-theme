@@ -4,11 +4,11 @@ dependencies:
   config:
     - field.storage.paragraph.field_children
     - paragraphs.paragraphs_type.accordion
-    - paragraphs.paragraphs_type.wysiwyg
+    - paragraphs.paragraphs_type.item
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: cW16QWrwsSqu4iDohyKrSEpRJqNIBywbbfBAgL8rUOQ
+  default_config_hash: GZ1til-0ojfYeb5yjh8kkE0UtbDfNNHkf_XK1dHL4IY
 id: paragraph.accordion.field_children
 field_name: field_children
 entity_type: paragraph
@@ -24,7 +24,7 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      wysiwyg: wysiwyg
+      item: item
     target_bundles_drag_drop:
       accordion:
         weight: 3
@@ -41,14 +41,17 @@ settings:
       hero_banner:
         weight: 10
         enabled: false
-      wysiwyg:
-        enabled: true
-        weight: 11
       image:
+        weight: 11
+        enabled: false
+      wysiwyg:
         weight: 11
         enabled: false
       section:
         weight: 13
+        enabled: false
+      dynamic_content:
+        weight: 15
         enabled: false
       quote:
         weight: 15
@@ -56,4 +59,7 @@ settings:
       tabs:
         weight: 17
         enabled: false
+      item:
+        enabled: true
+        weight: 18
 field_type: entity_reference_revisions

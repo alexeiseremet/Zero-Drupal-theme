@@ -4,12 +4,11 @@ dependencies:
   config:
     - field.storage.paragraph.field_children
     - paragraphs.paragraphs_type.carousel
-    - paragraphs.paragraphs_type.image
-    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.item
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: gNtoPrFl7JNsgmYaZQjQjpw4OSnhnqRCCi_prQ5jQpY
+  default_config_hash: i0XMwhhr4MeKKMTF85ChfjhAA0Io6ySBI80ds2wTiD4
 id: paragraph.carousel.field_children
 field_name: field_children
 entity_type: paragraph
@@ -25,8 +24,7 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      image: image
-      quote: quote
+      item: item
     target_bundles_drag_drop:
       carousel:
         weight: 6
@@ -46,16 +44,22 @@ settings:
       text_block:
         weight: 10
         enabled: false
+      image:
+        weight: 11
+        enabled: false
       wysiwyg:
         weight: 11
         enabled: false
-      image:
-        enabled: true
-        weight: 11
-      quote:
-        enabled: true
+      dynamic_content:
         weight: 15
+        enabled: false
+      quote:
+        weight: 15
+        enabled: false
       tabs:
         weight: 17
         enabled: false
+      item:
+        enabled: true
+        weight: 18
 field_type: entity_reference_revisions
