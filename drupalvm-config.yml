@@ -71,7 +71,7 @@ drupal_build_composer: false
 drupal_composer_path: "{{ config_dir }}/drupal.composer.json"
 drupal_composer_install_dir: "/var/www/drupalvm/drupal"
 drupal_composer_dependencies:
-  - "drupal/devel:^1.2"
+  - "drupal/devel:^2"
   - "drupal/crop:^2.0"
   - "drupal/components:^1.0"
   - "drupal/paragraphs:^1.5"
