@@ -63,14 +63,19 @@
 .cta-button-group {
   @extend %inline-list;
   justify-content: center;
-  margin-left: 0;
+  margin-left: -$base-spacing;
 
   .cta-button {
-    padding: 0 $base-spacing;
+    padding-left: $base-spacing;
     margin-bottom: $small-spacing;
+    padding-right: 0;
+  }
 
-    @include mappy-bp(small) {
-      padding: 0 $large-spacing;
+  @include mappy-bp(small) {
+    margin-left: -$large-spacing;
+
+    .cta-button {
+      padding-left: $large-spacing;
     }
   }
 }

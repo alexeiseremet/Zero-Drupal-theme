@@ -45,8 +45,9 @@ gulp.task('sass', function () {
     '../public/css/*.css.map'
   ], {force: true})
 
-  return gulp.src('../static/scss/**/*.scss')
+  return gulp.src('../static/scss/styles.scss')
     .pipe($.sourcemaps.init())
+    .pipe($.sassGlob())
     .pipe($.sass({
       importer: moduleImporter(),
       importOnce: {

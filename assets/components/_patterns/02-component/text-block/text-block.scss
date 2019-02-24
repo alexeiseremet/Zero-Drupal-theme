@@ -68,19 +68,11 @@
 .text-block--align-left {
    .cta-button-group {
      justify-content: flex-start;
-
-     @include mappy-bp(small) {
-       margin-left: -$large-spacing;
-     }
    }
  }
 
 .text-block--align-right {
   .cta-button-group {
     justify-content: flex-end;
-
-    @include mappy-bp(small) {
-      margin-right: -$large-spacing;
-    }
   }
 }
