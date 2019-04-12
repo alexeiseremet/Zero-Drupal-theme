@@ -20,11 +20,15 @@
       {% set childID = tabID ~ loop.index %}
       {% set title = child.title ?: child['#paragraph'].get('field_heading').value %}
 
-      <button class="tabs__nav-button js-tabs-nav-button {{ loop.first ? 'is-active' : '' }}" role="tab"
-              tabindex="{{ loop.first ? '0' : '-1' }}"
-              aria-controls="{{ childID }}"
-              aria-selected="{{ loop.first ? 'true' : 'false' }}"
-              data-collapse="tab" type="button">
+      <button
+          class="tabs__nav-button js-tabs-nav-button {{ loop.first ? 'is-active' : '' }}"
+          role="tab"
+          tabindex="{{ loop.first ? '0' : '-1' }}"
+          aria-controls="{{ childID }}"
+          aria-selected="{{ loop.first ? 'true' : 'false' }}"
+          data-collapse="tab"
+          type="button"
+      >
         <span class="tabs__nav-label">
           {{ title }}
         </span>
@@ -39,7 +43,10 @@
 
       <div id="{{ childID[1:] }}"
            class="tabs__body js-tabs-body"
-           role="tabpanel" tabindex="0" {{ loop.first ? '' : 'hidden' }}>
+           role="tabpanel"
+           tabindex="0"
+          {{ loop.first ?: 'hidden' }}
+      >
         {{ content }}
       </div>
     {% endfor %}

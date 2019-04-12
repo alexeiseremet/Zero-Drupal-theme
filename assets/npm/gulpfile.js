@@ -32,17 +32,13 @@ function loadConfig () {
 
 loadConfig()
 
-gulp.task('clean', function (cb) {
-  del(cb)
-})
-
 /**
  * CSS from all SCSS.
  */
-gulp.task('sass', function () {
+function sass () {
   del([
     '../public/css/*.css',
-    '../public/css/*.css.map'
+    '../public/css/*.css.map',
   ], {force: true})
 
   return gulp.src('../static/scss/styles.scss')
@@ -60,7 +56,7 @@ gulp.task('sass', function () {
       lineNumbers: false,
       sourceMap: true,
       outputStyle: 'expanded',
-      errLogToConsole: true
+      errLogToConsole: true,
     }))
     .pipe($.base64())
     .pipe($.autoprefixer(config.autoprefixerOptions))
@@ -71,22 +67,22 @@ gulp.task('sass', function () {
   //   message: 'All SASS files have been recompiled to CSS.',
   //   onLast: true
   // }))
-})
+}
 
 /**
  * Concat javascript.
  */
-gulp.task('compress', function () {
+function compress () {
   del([
     '../public/js/*.js',
-    '../public/js/*.js.map'
+    '../public/js/*.js.map',
   ], {force: true})
 
   return gulp.src([
-    '../static/js/**/*.js',
-    '../components/_patterns/**/*.js',
-    '!../**/*.gemini.js'
-  ])
+    'static/js/**/*.js',
+    'components/_patterns/**/*.js',
+    '!**/*.gemini.js'
+  ], { cwd: '../' })
     .pipe($.sourcemaps.init())
     .pipe($.babel({
       presets: ['@babel/env']
@@ -103,28 +99,28 @@ gulp.task('compress', function () {
   //   message: "All JS files in the theme have been minified.",
   //   onLast: true
   // }))
-})
+}
 
 /**
  * SVG files.
  */
-gulp.task('svg', function () {
+function svg () {
   del([
-    '../public/svg/*.svg'
+    '../public/svg/*.svg',
   ], {force: true})
 
   return gulp.src('../static/svg/**/*.svg')
     .pipe($.svgSprite({
       shape: {
         id: {
-          separator: '__'
+          separator: '__',
         },
-        dest: './'
+        dest: './',
       },
       svg: {
         xmlDeclaration: false,
-        doctypeDeclaration: false
-      }
+        doctypeDeclaration: false,
+      },
     }))
     .on('error', function (error) {
       this.emit('end')
@@ -135,20 +131,22 @@ gulp.task('svg', function () {
   //   message: "All SVG files have been optimized.",
   //   onLast: true
   // }))
-})
+}
 
 /**
  * Style guide.
  */
-gulp.task('styleguide', $.shell.task([
+function styleguide (done) {
+  $.shell.task([
     'php core/console --generate'
   ], {cwd: '../'})
-)
+  done()
+}
 
 /**
  * Browser Sync.
  */
-gulp.task('browser-sync', function () {
+function browserSyncInit () {
   browserSync.init({
     proxy: config.browserSync.hostname,
     port: config.browserSync.port,
@@ -158,29 +156,29 @@ gulp.task('browser-sync', function () {
     online: config.browserSync.online,
     ui: config.browserSync.ui,
     snippetOptions: {
-      blacklist: ['**/index.html', '**/patternlab/', '**/?p*']
+      blacklist: ['**/index.html', '**/patternlab/', '**/?p*'],
     }
   })
-})
+}
 
 /**
  * Watcher task.
  */
-gulp.task('watch', function () {
+function watcher () {
   // watch scss for changes
-  gulp.watch(['../{static/scss,components/_patterns}/**/*.scss'], ['sass', 'styleguide'])
+  gulp.watch(['../{static/scss,components/_patterns}/**/*.scss'], gulp.series(sass, styleguide))
     .on('change', browserSync.reload)
 
   // watch js for changes
-  gulp.watch(['../{static/js,components/_patterns}/**/*.js'], ['compress', 'styleguide'])
+  gulp.watch(['../{static/js,components/_patterns}/**/*.js'], gulp.series(compress, styleguide))
     .on('change', browserSync.reload)
 
   // watch svg for changes
-  gulp.watch(['../{static/svg,components/_patterns}/**/*.svg'], ['svg', 'styleguide'])
+  gulp.watch(['../{static/svg,components/_patterns}/**/*.svg'], gulp.series(svg, styleguide))
     .on('change', browserSync.reload)
 
   // watch twig&json for changes
-  gulp.watch(['../components/**/*.{twig,json}'], ['styleguide'])
+  gulp.watch(['../components/**/*.{twig,json}'], gulp.series(styleguide))
     .on('change', browserSync.reload)
 
   // If user has specified an override
@@ -188,7 +186,11 @@ gulp.task('watch', function () {
     gulp.watch(['../templates/**/*.twig'])
       .on('change', browserSync.reload)
   }
-})
+}
 
-gulp.task('build', ['sass', 'compress', 'svg'])
-gulp.task('default', ['browser-sync', 'watch'])
+const buildTasks = gulp.series(svg, sass, compress)
+const defaultTasks = gulp.parallel(browserSyncInit, watcher)
+
+gulp.task('styleguide', styleguide)
+gulp.task('build', buildTasks)
+gulp.task('default', defaultTasks)

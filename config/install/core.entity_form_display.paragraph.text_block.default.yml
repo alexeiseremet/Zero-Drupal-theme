@@ -14,7 +14,7 @@ dependencies:
     - paragraphs
     - text
 _core:
-  default_config_hash: fEf-04Azdq9f3oqwFiqvt6KM_qPLNrwXBhTv8ChATiA
+  default_config_hash: hsP2kV9h4tMR0PAwIuJrNFFpyYQwNeC_GNNcR7LTNYE
 id: paragraph.text_block.default
 targetEntityType: paragraph
 bundle: text_block
@@ -28,7 +28,7 @@ content:
       edit_mode: closed
       add_mode: select
       form_display_mode: default
-      default_paragraph_type: layout_wrapper
+      default_paragraph_type: _none
     third_party_settings: {  }
     type: entity_reference_paragraphs
     region: content

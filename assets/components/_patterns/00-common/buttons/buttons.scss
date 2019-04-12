@@ -9,6 +9,7 @@
 //
 // Style guide: Common.Button
 
+%button,
 .button {
   @include heading-bold;
   @extend %text-truncate;
@@ -47,6 +48,7 @@
     letter-spacing: .1rem;
   }
 
+  %button--primary,
   &--primary {
     background-color: $action-color;
     color: $white;
@@ -82,8 +84,8 @@
 
 .cta-button {
   a {
-    @extend .button;
-    @extend .button--primary;
+    @extend %button;
+    @extend %button--primary;
   }
 }
 

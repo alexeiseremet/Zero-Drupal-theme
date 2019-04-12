@@ -63,7 +63,7 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
-  appearance: none;
+  -webkit-appearance: none;
   background-color: $white;
   border: $form-input-border;
   border-color: $form-input-border-color;
@@ -123,7 +123,6 @@ select {
   &::-ms-expand {
     display: none;
   }
-;
 
   // Undo the Firefox inner focus ring.
   &:focus:-moz-focusring {

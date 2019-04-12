@@ -5,6 +5,7 @@ dependencies:
     - field.storage.paragraph.field_children
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.carousel
+    - paragraphs.paragraphs_type.dynamic_content
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.layout_wrapper
     - paragraphs.paragraphs_type.tabs
@@ -32,6 +33,7 @@ settings:
       carousel: carousel
       image: image
       layout_wrapper: layout_wrapper
+      dynamic_content: dynamic_content
       tabs: tabs
     target_bundles_drag_drop:
       accordion:
@@ -49,6 +51,9 @@ settings:
       layout_wrapper:
         enabled: true
         weight: 14
+      dynamic_content:
+        enabled: true
+        weight: 15
       quote:
         weight: 15
         enabled: false
@@ -58,7 +63,13 @@ settings:
       tabs:
         enabled: true
         weight: 17
+      item:
+        weight: 18
+        enabled: false
       text_block:
         weight: 18
+        enabled: false
+      wysiwyg:
+        weight: 24
         enabled: false
 field_type: entity_reference_revisions

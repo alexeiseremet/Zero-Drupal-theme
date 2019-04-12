@@ -25,14 +25,18 @@
       <dt class="accordion__title" role="heading" aria-level="3">
         <button class="accordion__title-button"
                 aria-expanded="{{ loop.first ? 'true' : 'false' }}"
-                aria-controls="{{ childID }}" data-collapse="accordion"
-                type="button">
+                aria-controls="{{ childID }}"
+                data-collapse="accordion"
+                type="button"
+        >
           {{ title }}
         </button>
       </dt>
 
-      <dd id="{{ childID[1:] }}" role="region"
-          class="accordion__content js-accordion-content">
+      <dd id="{{ childID[1:] }}"
+          role="region"
+          class="accordion__content js-accordion-content"
+      >
         {{ content }}
       </dd>
     </dl>
